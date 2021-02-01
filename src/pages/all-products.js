@@ -39,8 +39,6 @@ const AllProductsPage = () => {
     })
   }
 
-  console.log(selectedCollectionIdsMap)
-
   const filterByCategory = product => {
     if(Object.keys(selectedCollectionIdsMap).length){
       for( let key in selectedCollectionIdsMap){
