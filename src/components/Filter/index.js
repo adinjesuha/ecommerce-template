@@ -4,7 +4,7 @@ import { FilterWrapper } from './styles'
 import ProductContext from '../../context/ProductContext'
 import CategoryFilterItem from './CategoryFilterItem'
 
-const Filter = ({}) => {
+const Filter = () => {
   const { collections } = useContext(ProductContext)
   return (
     <FilterWrapper>

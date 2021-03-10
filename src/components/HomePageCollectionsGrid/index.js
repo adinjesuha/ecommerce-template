@@ -4,13 +4,13 @@ import CollectionTile from '../CollectionTile'
 import { RemainingCollection } from './styles'
 
 const HomePageCollectionsGrid = ({collections}) => {
-  const saleCollection = collections.find(collection => collection.title === "Deals")
-  const remainingCollections = collections.filter(collection => collection.title !== "Deals")
+  const saleCollection = collections.find(collection => collection.title === "Destacados")
+  const remainingCollections = collections.filter(collection => collection.title !== "Destacados")
   return (
     <div>
       {!!saleCollection && (
         <CollectionTile
-          sale
+          featured
           destination={`/all-products?c=${encodeURIComponent(saleCollection.shopifyId)}`}
           title={saleCollection.title}
           description={saleCollection.description}
