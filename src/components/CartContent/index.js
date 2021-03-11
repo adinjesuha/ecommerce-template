@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { navigate } from '@reach/router'
+import { navigateTo } from 'gatsby'
 import CartContext from '../../context/CartContext'
 import { CartItem, CartHeader, CartFooter, Footer } from './styles'
 import QuantityAdjuster from '../QuantityAdjuster'
@@ -51,7 +51,7 @@ export default function CartContent() {
       )}
       <Footer>
         <div>
-          <Button onClick={() => navigate(-1)}>Continue Shopping</Button>
+          <Button onClick={() => navigateTo('/')}>Continue Shopping</Button>
         </div>
         <div>
           {!!checkout?.webUrl && (

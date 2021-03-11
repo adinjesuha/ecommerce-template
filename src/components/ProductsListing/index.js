@@ -17,7 +17,7 @@ const ListingWrapper = styled.div`
 
 const ProductsListing = ({products, isPage}) => {
   return (
-    <ListingWrapper isPage={isPage}>
+    <ListingWrapper>
       {products.map((product) => (
         <ProductsListingItem key={product.shopifyId} product={product} />
       ))}
