@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Shopify Starter`,
-    description: `Gatsby & Shopify Ecommerce template.`,
+    title: `Pet's Club`,
+    description: `Alimento Premium para tu mascota`,
     author: `@adinjesuha`,
   },
   plugins: [

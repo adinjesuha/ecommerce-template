@@ -11,7 +11,7 @@ const query = graphql`
     }
   }
   {
-    allShopifyProduct {
+    allShopifyProduct(sort: {fields: vendor, order: ASC}) {
       edges {
         node {
           ...ShopifyProductFields

@@ -21,24 +21,43 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allShopifyCollection {
+        nodes {
+          handle
+          id
+          products {
+            id
+          }
+        }
+      }
     }
   `);
 
-  const productsPerPage = 10
-  const numPages = Math.ceil(data.allShopifyProduct.edges.length / productsPerPage)
+  data.allShopifyCollection.nodes.forEach(
+    ({handle, products, id}) => {
+      const productsPerPage = 10
+      const collectionProductsCount = products.length;
+      const numPages = Math.ceil(collectionProductsCount / productsPerPage);
+      Array.from({
+        length:numPages
+      }).forEach((_, i)=>{
+        createPage({
+          path: i === 0 ? `${handle}` : `${handle}/${i + 1}`,
+          component: path.resolve('./src/templates/ProductsTemplate/index.js'),
+          context: {
+            handle,
+            collectionId: id,
+            limit:productsPerPage,
+            skip: i * productsPerPage,
+            numPages,
+            currentPage: i + 1,
+          }
+        });
+      })
+    }
+  )
 
-  Array.from({length:numPages}).forEach((_, i)=>{
-    createPage({
-      path: i === 0 ? '/products' : `/products/${i + 1}`,
-      component: path.resolve('./src/templates/ProductsTemplate/index.js'),
-      context: {
-        limit:productsPerPage,
-        skip: i * productsPerPage,
-        numPages,
-        currentPage: i + 1,
-      }
-    });
-  })
+
 
   data.allShopifyProduct.edges.forEach(({ node }) => {
     createPage({
