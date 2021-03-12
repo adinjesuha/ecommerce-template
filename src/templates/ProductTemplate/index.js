@@ -81,6 +81,7 @@ export default function ProductTemplate({data}){
 export const query = graphql`
   query ProductQuery($shopifyId: String){
     shopifyProduct(shopifyId: {eq: $shopifyId}){
+      description
       ...ShopifyProductFields
     }
   }

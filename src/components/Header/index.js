@@ -32,11 +32,12 @@ const Header = ({ metaData }) => {
           {logoUrl ? (
             <img
               src={logoUrl}
-              width="100px"
+              width="100"
+              height="auto"
               alt={storeName}
               style={{
                 verticalAlign: 'middle'
-              }}
+              }}  
             />
           ) : (
             {storeName}

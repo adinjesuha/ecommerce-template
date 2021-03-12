@@ -14,7 +14,7 @@ const Content = styled.div`
   display: grid;
   grid-gap: 20px;
   margin-top: 20px;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 232px 3fr;
 `;
 
 
@@ -97,7 +97,7 @@ const AllProductsPage = () => {
             </div>
           )}
           {!!filteredProducts.length && (
-            <ProductsListing products={filteredProducts}/>
+            <ProductsListing products={filteredProducts} hasFilters/>
           )}
         </Content>
       </LayoutWrapper>

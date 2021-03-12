@@ -1,20 +1,8 @@
 import React from 'react';
-import styled from 'styled-components'
 
-import ProductsListingItem from '../../../components/ProductsListing/ProductsListingItem';
+import { ProductListingWrapper } from '../../../components/ProductsListing/styles';
+import ProductsListingItem from '../../../components/ProductListingItem';
 
-
-const ProductListingWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-  @media(min-width: 768px){
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  @media(min-width: 1024px){
-    grid-template-columns: ${props => props.isPage ? '1fr 1fr 1fr 1fr 1fr' : '1fr 1fr 1fr 1fr'};
-  }
-`
 
 const CatalogProducts = ({ products, limit, skip, cartUrl }) => {
   return (

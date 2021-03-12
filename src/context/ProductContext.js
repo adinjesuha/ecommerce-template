@@ -4,6 +4,14 @@ import { graphql, useStaticQuery } from 'gatsby';
 const query = graphql`
   fragment ProductTileFields on ShopifyProduct {
     handle
+    variants {
+      price
+      id
+      selectedOptions {
+        name
+        value
+      }
+    }
     priceRange {
       minVariantPrice {
         amount

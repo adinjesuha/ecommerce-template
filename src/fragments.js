@@ -4,7 +4,6 @@ export const productFields = graphql`
   fragment ShopifyProductFields on ShopifyProduct {
     shopifyId
     title
-    description
     tags
     images{
       id

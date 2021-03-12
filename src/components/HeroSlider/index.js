@@ -21,7 +21,6 @@ const HeroSlider = ({collections}) => {
 		]
 	};
 
-	console.log(collections)
 	return (
 		<StyledHeroSlider {...settings}>
 			{collections.map(collection => (
