@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
-import { LayoutWrapper } from './globals'
 import '../style.css'
 
 const Layout = ({ children }) => {
@@ -11,20 +10,22 @@ const Layout = ({ children }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          gatsbyStorefrontConfig{
+            storeName
+            logoUrl
+          }
         }
       }
     }
   `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <LayoutWrapper>
-        <main>
-          {children}
-        </main>
-      </LayoutWrapper>
+      <Header metaData={data.site.siteMetadata.gatsbyStorefrontConfig} />
+      <main style={{
+        paddingTop: '66px',
+      }}>
+        {children}
+      </main>
     </>
   )
 }

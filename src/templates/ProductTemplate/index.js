@@ -10,6 +10,7 @@ import Layout from '../../components/layout'
 import ImageGallery from '../../components/ImageGallery'
 import ProductQuantityAdder from '../../components/ProductQuantityAdder'
 import { Grid, SelectWrapper, Price } from './styles'
+import { LayoutWrapper } from '../../components/globals'
 
 export default function ProductTemplate({data}){
   const { getProductById } = useContext(CartContext)
@@ -39,38 +40,40 @@ export default function ProductTemplate({data}){
   return(
     <Layout>
       <SEO description={data.shopifyProduct.description} title={data.shopifyProduct.title} />
-      <Grid>
-        <div>
-          <h1>{title}</h1>
-          <p>{description}</p>
-          {product?.availableForSale && !!selectedVariant && (
-            <>
-            { product?.variants.length > 1 && (
-              <SelectWrapper>
-                <strong>Variant</strong>
-                <select value={selectedVariant.id} onChange={handleVariantChange}>
-                  {product?.variants.map(v => (
-                    <option key={v.id} value={v.id}>{v.title}</option>
-                  ))}
-                </select>
-              </SelectWrapper>
-            )}
-            {!!selectedVariant && (
+      <LayoutWrapper>
+        <Grid>
+          <div>
+            <h1>{title}</h1>
+            <p>{description}</p>
+            {product?.availableForSale && !!selectedVariant && (
               <>
-                <Price>L. {selectedVariant.price}</Price>
-                <ProductQuantityAdder 
-                  available={selectedVariant.available} 
-                  variantId={selectedVariant.id}
-                />
+              { product?.variants.length > 1 && (
+                <SelectWrapper>
+                  <strong>Variant</strong>
+                  <select value={selectedVariant.id} onChange={handleVariantChange}>
+                    {product?.variants.map(v => (
+                      <option key={v.id} value={v.id}>{v.title}</option>
+                    ))}
+                  </select>
+                </SelectWrapper>
+              )}
+              {!!selectedVariant && (
+                <>
+                  <Price>L. {selectedVariant.price}</Price>
+                  <ProductQuantityAdder 
+                    available={selectedVariant.available} 
+                    variantId={selectedVariant.id}
+                  />
+                </>
+              )}
               </>
             )}
-            </>
-          )}
-        </div>
-        <div>
-          <ImageGallery selectedVariantImageId={selectedVariant?.image.id} images={images}/>
-        </div>
-      </Grid>
+          </div>
+          <div>
+            <ImageGallery selectedVariantImageId={selectedVariant?.image.id} images={images}/>
+          </div>
+        </Grid>
+      </LayoutWrapper>
     </Layout>
   )
 }

@@ -4,19 +4,26 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProductContext from '../context/ProductContext'
 import HomePageCollectionsGrid from "../components/HomePageCollectionsGrid"
-import ProductsListing from "../components/ProductsListing"
+import HeroSlider from "../components/HeroSlider"
+import { LayoutWrapper } from "../components/globals"
 
 const IndexPage = () => {
-  const { collections, products } = useContext(ProductContext)
+  const { collections } = useContext(ProductContext)
   return (
     <Layout>
-      <SEO title="Home" />
-      <HomePageCollectionsGrid 
+      <SEO title='Inicio' />
+      <HeroSlider 
         collections={
           collections.filter(collection => collection.image !== null)
         }
       />
-      <ProductsListing products={products} isPage/>
+      <LayoutWrapper>
+        <HomePageCollectionsGrid
+          collections={
+            collections.filter(collection => collection.image !== null)
+          }
+        />
+      </LayoutWrapper>
     </Layout>
   )
 }

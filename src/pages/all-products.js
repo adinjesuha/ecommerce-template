@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Filter from '../components/Filter'
 import ProductsListing from '../components/ProductsListing'
+import { LayoutWrapper } from "../components/globals"
 
 const Content = styled.div`
   display: grid;
@@ -65,39 +66,41 @@ const AllProductsPage = () => {
   return (
     <Layout>
       <SEO title="All Products" />
-      {!!searchTerm && !!filteredProducts.length && (
-        <h3>
-          Search Term: <strong>'{searchTerm}'</strong>
-        </h3>
-      )}
-      {!!filteredProducts.length && (
-        <h4>{filteredProducts.length} Products</h4>
-      )}
-      <Content>
-        <Filter />
-        {!filteredProducts.length && (
-          <div>
-            <h3>
-              <span>Oh no! Nothing matches</span>
-              &nbsp;
-              <strong>'{searchTerm}'</strong>
-            </h3>
-            <div>
-              To help with your search why not try:
-              <br />
-              <br />
-              <ul>
-                <li>Checking your spelling</li>
-                <li>Using less words</li>
-                <li>Try using a different search term</li>
-              </ul>
-            </div>
-          </div>
+      <LayoutWrapper>
+        {!!searchTerm && !!filteredProducts.length && (
+          <h3>
+            Search Term: <strong>'{searchTerm}'</strong>
+          </h3>
         )}
         {!!filteredProducts.length && (
-          <ProductsListing products={filteredProducts}/>
+          <h4>{filteredProducts.length} Products</h4>
         )}
-      </Content>
+        <Content>
+          <Filter />
+          {!filteredProducts.length && (
+            <div>
+              <h3>
+                <span>Oh no! Nothing matches</span>
+                &nbsp;
+                <strong>'{searchTerm}'</strong>
+              </h3>
+              <div>
+                To help with your search why not try:
+                <br />
+                <br />
+                <ul>
+                  <li>Checking your spelling</li>
+                  <li>Using less words</li>
+                  <li>Try using a different search term</li>
+                </ul>
+              </div>
+            </div>
+          )}
+          {!!filteredProducts.length && (
+            <ProductsListing products={filteredProducts}/>
+          )}
+        </Content>
+      </LayoutWrapper>
     </Layout>
   )
 }

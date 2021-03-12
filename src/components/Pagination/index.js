@@ -9,7 +9,7 @@ const Pagination = ({isFirst, isLast, prevPage, numPages, handle, currentPage, n
     <ul>
       {!isFirst && (
         <li>
-          <Link className="pagination__item" to={prevPage} rel="prev">
+          <Link to={prevPage} rel="prev">
             <span>
               <MdKeyboardArrowLeft />
             </span>
@@ -28,19 +28,14 @@ const Pagination = ({isFirst, isLast, prevPage, numPages, handle, currentPage, n
         } 
         return (
           <li key={`pagination-number${i + 1}`}>
-            <Link
-              to={`/${handle}/${i === 0 ? '' : i + 1}`}
-              className={currentPage === i + 1 ? "pagination__item is-active" : "pagination__item"}
-            >
-              {i + 1}
-            </Link>
+            <Link to={`/${handle}/${i === 0 ? '' : i + 1}`}>{i + 1}</Link>
           </li>
         )
       }
       )}
-      <li className="pagination__list-item">
+      <li>
       {!isLast && (
-        <Link className="pagination__item" to={nextPage} rel="next">
+        <Link to={nextPage} rel="next">
           Siguiente
           <span>
             <MdKeyboardArrowRight />

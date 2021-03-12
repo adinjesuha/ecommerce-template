@@ -6,6 +6,7 @@ import SEO from '../../components/seo'
 import Layout from '../../components/layout'
 import CatalogProducts from './CatalogProducts'
 import Pagination from '../../components/Pagination'
+import { LayoutWrapper } from '../../components/globals'
 
 export default function ProductsTemplate({pageContext, data, ...props}){
   const { currentPage, numPages, handle, limit, skip } = pageContext
@@ -22,20 +23,24 @@ export default function ProductsTemplate({pageContext, data, ...props}){
   return(
     <Layout>
       <SEO title={data.collection.nodes[0].title} />
-      <CatalogProducts
-        products={products}
-        limit={limit}
-        skip={skip}
-      />
-      <Pagination
-        isFirst={isFirst} 
-        isLast={isLast} 
-        prevPage={prevPage} 
-        numPages={numPages} 
-        handle={handle}
-        currentPage={currentPage} 
-        nextPage={nextPage}
-      />
+      <LayoutWrapper>
+        <CatalogProducts
+          products={products}
+          limit={limit}
+          skip={skip}
+        />
+        {numPages > 1 && (
+          <Pagination
+            isFirst={isFirst} 
+            isLast={isLast} 
+            prevPage={prevPage} 
+            numPages={numPages} 
+            handle={handle}
+            currentPage={currentPage} 
+            nextPage={nextPage}
+          />
+        )}
+      </LayoutWrapper>
     </Layout>
   )
 }
