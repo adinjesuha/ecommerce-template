@@ -13,6 +13,9 @@
   --teal-20: #b1e7e7;
   --red: #e54b4b;
   --red-20: #f08484;
+  --red-brand: #f04359;
+  --red-brand-60: #ce2d42;
+  --blue-brand: #222649;
   --pink: #cf256d;
   --black: #333;
   --black-20: #4f4f4f;
@@ -30,7 +33,7 @@
   --youtube: #bb0000;
   --slack: #e8a723;
 
-  --bgColor: var(--purp);
+  --bgColor: var(--red-brand);
   --lineColor: var(--white-60);
   --zebraBg: var(--white-40);
 

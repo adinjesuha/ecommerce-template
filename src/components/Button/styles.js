@@ -9,7 +9,18 @@ const fullWidthStyles = ({ fullWidth }) => {
   }
 };
 
+const searchButtonStyles = ({ searchButton }) => {
+  if(searchButton) {
+    return css`
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    `
+  }
+}
+
 export const Button = styled.button`
+  background: var(--bgColor);
+  border: 1px solid var(--bgColor);
   outline: none;
   padding: 0 10px;
   height: 44px;
@@ -20,11 +31,14 @@ export const Button = styled.button`
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;
-  background: white;
-  color: black;
-  border: 1px solid black;
+  color: white;
   white-space: nowrap;
+  ${searchButtonStyles}
   ${fullWidthStyles}
+  > svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
   &:hover:not(:disabled) {
     color: white;
     background: black;

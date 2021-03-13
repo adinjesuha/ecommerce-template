@@ -4,8 +4,7 @@ import { navigate, useLocation } from '@reach/router'
 import queryString from 'query-string'
 
 import { SearchForm } from './styles'
-import { Input } from '../Input'
-import { Button } from '../Button'
+import { Button, Input } from '../globals'
 
 export default function Search(){
   const [ searchTerm, setSearchTerm ] = useState('')
@@ -22,8 +21,13 @@ export default function Search(){
   }
   return(
     <SearchForm onSubmit={handleSubmit}>
-      <Input value={searchTerm} onChange={(e) => setSearchTerm(e.currentTarget.value)} placeholder="Search"/>
-      <Button>
+      <Input  
+        value={searchTerm} 
+        onChange={(e) => setSearchTerm(e.currentTarget.value)} 
+        placeholder="Search" 
+        searchInput
+      />
+      <Button searchButton>
         <FaSearch />
       </Button>
     </SearchForm>

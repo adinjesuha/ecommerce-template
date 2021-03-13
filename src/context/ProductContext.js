@@ -5,12 +5,8 @@ const query = graphql`
   fragment ProductTileFields on ShopifyProduct {
     handle
     variants {
+      title
       price
-      id
-      selectedOptions {
-        name
-        value
-      }
     }
     priceRange {
       minVariantPrice {
