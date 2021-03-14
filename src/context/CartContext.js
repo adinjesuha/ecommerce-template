@@ -6,8 +6,6 @@ const client = Client.buildClient({
   storefrontAccessToken: process.env.GATSBY_ACCESS_TOKEN
 })
 
-console.log(process.env.GATSBY_STORE_NAME)
-
 const defaultState = {
   cart: {},
 };

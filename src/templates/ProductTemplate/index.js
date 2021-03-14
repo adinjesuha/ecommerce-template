@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-onchange */
 import React, { useState, useEffect, useContext } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { navigate, useLocation } from '@reach/router'
 import queryString from 'query-string'
 import CartContext from '../../context/CartContext'
@@ -11,10 +11,12 @@ import ImageGallery from '../../components/ImageGallery'
 import ProductQuantityAdder from '../../components/ProductQuantityAdder'
 import { Grid, SelectWrapper, Price } from './styles'
 import { LayoutWrapper } from '../../components/globals'
+import Breadcrumbs from '../../components/Breadcrumbs'
 
 export default function ProductTemplate({data}){
   const { getProductById } = useContext(CartContext)
-  const { title, images, shopifyId, description } = data.shopifyProduct
+  const { title, images, shopifyId, description, vendor } = data.shopifyProduct
+  const { title: collectionTitle, handle } = data.shopifyCollection
   
   const [ product, setProduct ] = useState(null)
   const [ selectedVariant, setSelectedVariant ] = useState(null)
@@ -29,6 +31,7 @@ export default function ProductTemplate({data}){
     })
   }, [getProductById, setProduct, shopifyId, variantId])
 
+
   const handleVariantChange = e => {
     const newVariant = product?.variants.find( v => v.id === e.target.value)
     setSelectedVariant(newVariant)
@@ -41,36 +44,63 @@ export default function ProductTemplate({data}){
     <Layout>
       <SEO description={data.shopifyProduct.description} title={data.shopifyProduct.title} />
       <LayoutWrapper>
+        <Breadcrumbs
+          productTitle={title}
+          collectionTitle={collectionTitle}
+          collectionPath={handle}
+          separator="/"
+        />
         <Grid>
           <div>
+            <header>
+              <h1>{title}</h1>
+              <p>por <Link to="/">{vendor}</Link></p>
+            </header>
+            <ImageGallery selectedVariantImageId={selectedVariant?.image.id} images={images}/>
+          </div>
+          <div>
             <h1>{title}</h1>
-            <p>{description}</p>
+            <p>por <Link to="/">{vendor}</Link></p>
+            {!!selectedVariant && (
+              <Price>L. {selectedVariant.price}</Price>
+            )}
             {product?.availableForSale && !!selectedVariant && (
               <>
               { product?.variants.length > 1 && (
-                <SelectWrapper>
-                  <strong>Variant</strong>
-                  <select value={selectedVariant.id} onChange={handleVariantChange}>
-                    {product?.variants.map(v => (
-                      <option key={v.id} value={v.id}>{v.title}</option>
-                    ))}
-                  </select>
-                </SelectWrapper>
-              )}
-              {!!selectedVariant && (
                 <>
-                  <Price>L. {selectedVariant.price}</Price>
-                  <ProductQuantityAdder 
-                    available={selectedVariant.available} 
-                    variantId={selectedVariant.id}
-                  />
+                  <strong>{selectedVariant?.selectedOptions[0].name}</strong>
+                  <SelectWrapper>
+                    {product?.variants.map(v => (
+                      <div>
+                        <input 
+                          type="radio"
+                          readOnly="readonly"
+                          name="option" 
+                          id={v.id}
+                          value={v.id} 
+                          onChange={handleVariantChange}
+                        />
+                        <label 
+                          htmlFor={v.id}
+                          className={selectedVariant?.id === v.id ? 'selected-option' : ''}
+                        >
+                          <span>Click to select</span>
+                          <span>{v.title}</span>
+                        </label>
+                      </div>
+                    ))}
+                  </SelectWrapper>
                 </>
               )}
               </>
             )}
-          </div>
-          <div>
-            <ImageGallery selectedVariantImageId={selectedVariant?.image.id} images={images}/>
+            {!!selectedVariant && (
+              <ProductQuantityAdder 
+                available={selectedVariant.available} 
+                variantId={selectedVariant.id}
+              />
+            )}
+            <p>{description}</p>
           </div>
         </Grid>
       </LayoutWrapper>
@@ -83,6 +113,10 @@ export const query = graphql`
     shopifyProduct(shopifyId: {eq: $shopifyId}){
       description
       ...ShopifyProductFields
+    }
+    shopifyCollection(products: {elemMatch: {shopifyId: {eq: $shopifyId}}}) {
+      handle
+      title
     }
   }
 `;

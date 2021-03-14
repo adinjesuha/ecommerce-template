@@ -4,7 +4,7 @@ import CartContext from '../../context/CartContext'
 import { CartItem, CartHeader, CartFooter, Footer } from './styles'
 import QuantityAdjuster from '../QuantityAdjuster'
 import RemoveLineItem from '../RemoveLineItem'
-import { Button } from '../Button'
+import { Button } from '../globals'
 
 export default function CartContent() {
   const { checkout, updateLineItem } = useContext(CartContext)

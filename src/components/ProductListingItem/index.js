@@ -14,7 +14,8 @@ const ProductsListingItem = ({ product }) => {
   console.log(product)
   const {
     images: [firstImage],
-    variants
+    variants,
+    vendor
   } = product
   return (
     <ProductItemWrapper>
@@ -41,7 +42,7 @@ const ProductsListingItem = ({ product }) => {
           <ProductContentRight>
             <h2>{product.title}, {variants[0].title}</h2>
             <ProductInfo>
-              <p className="product-vendor">Nutrisource</p>
+              <p className="product-vendor">{vendor}</p>
               <p className="product-price"><span>L. </span>{variants[0].price}</p>
             </ProductInfo>
           </ProductContentRight>

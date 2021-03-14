@@ -23,7 +23,6 @@ const Layout = ({ children }) => {
       <Header metaData={data.site.siteMetadata.gatsbyStorefrontConfig} />
       <main style={{
         paddingTop: '66px',
-        overflowX: 'hidden',
       }}>
         {children}
       </main>
