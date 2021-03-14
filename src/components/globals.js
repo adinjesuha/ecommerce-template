@@ -53,6 +53,7 @@ export const LayoutWrapper = styled.div`
 export const Button = styled.button`
   background: var(--bgColor);
   border: 0px solid transparent;
+  border-radius: 4px;
   outline: none;
   padding: 0 10px;
   height: 44px;
@@ -85,8 +86,8 @@ export const Button = styled.button`
     width: 100%
   `}
   ${props => props.searchButton && css`
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     padding: 0 14px;
   `}
 `
@@ -96,15 +97,15 @@ export const Input = styled.input`
   display: block;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-  border-radius: 0;
+  border-radius: 4px;
   padding: 5px 10px;
   height: 44px;
   box-sizing: border-box;
   min-width: 0;
   transition: border-color .3s ease;
   ${props => props.searchInput && css`
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     border-right: none;
   `}
   &:focus{

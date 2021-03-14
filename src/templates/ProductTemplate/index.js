@@ -16,7 +16,7 @@ import Breadcrumbs from '../../components/Breadcrumbs'
 export default function ProductTemplate({data}){
   const { getProductById } = useContext(CartContext)
   const { title, images, shopifyId, description, vendor } = data.shopifyProduct
-  const { title: collectionTitle, handle } = data.shopifyCollection
+  const { handle } = data.shopifyCollection
   
   const [ product, setProduct ] = useState(null)
   const [ selectedVariant, setSelectedVariant ] = useState(null)
@@ -46,7 +46,7 @@ export default function ProductTemplate({data}){
       <LayoutWrapper>
         <Breadcrumbs
           productTitle={title}
-          collectionTitle={collectionTitle}
+          collectionTitle={data.shopifyCollection?.title}
           collectionPath={handle}
           separator="/"
         />
@@ -59,8 +59,11 @@ export default function ProductTemplate({data}){
             <ImageGallery selectedVariantImageId={selectedVariant?.image.id} images={images}/>
           </div>
           <div>
-            <h1>{title}</h1>
-            <p>por <Link to="/">{vendor}</Link></p>
+            <div className="meta-description">
+              <h1>{title}</h1>
+              <p>por <Link to="/">{vendor}</Link></p>
+              <p>{description}</p>
+            </div>
             {!!selectedVariant && (
               <Price>L. {selectedVariant.price}</Price>
             )}
@@ -68,10 +71,10 @@ export default function ProductTemplate({data}){
               <>
               { product?.variants.length > 1 && (
                 <>
-                  <strong>{selectedVariant?.selectedOptions[0].name}</strong>
                   <SelectWrapper>
+                    <strong>{selectedVariant?.selectedOptions[0].name}</strong>
                     {product?.variants.map(v => (
-                      <div>
+                      <div key={v.id}>
                         <input 
                           type="radio"
                           readOnly="readonly"
@@ -100,7 +103,6 @@ export default function ProductTemplate({data}){
                 variantId={selectedVariant.id}
               />
             )}
-            <p>{description}</p>
           </div>
         </Grid>
       </LayoutWrapper>

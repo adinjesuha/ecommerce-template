@@ -11,7 +11,6 @@ import {
 } from './styles'
 
 const ProductsListingItem = ({ product }) => {
-  console.log(product)
   const {
     images: [firstImage],
     variants,

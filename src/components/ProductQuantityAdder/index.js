@@ -31,9 +31,9 @@ export default function ProductQuantityAdder({ variantId, available}){
         />
         <Button 
           type="submit" 
-          fullWidth 
+          fullWidth
           disabled={!available}
-        >Add to cart</Button>
+        >Agregar al carro</Button>
       </form>
     </ProductQuantityAdderWrapper>
   )

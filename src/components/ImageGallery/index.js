@@ -9,7 +9,7 @@ import ImageThumbnail from './ImageThumbnail'
 
 export const StyledSliderThumbnail = styled(Slider)`
   .slick-arrow{
-    display: none; 
+    display: none !important; 
   }
   .slick-dots{
     li{

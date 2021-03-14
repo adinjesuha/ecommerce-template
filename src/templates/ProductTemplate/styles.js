@@ -21,44 +21,42 @@ export const Grid = styled.section`
     }
   }
   > div:last-child{
-    h1 {
+    .meta-description{
       display: none;
-    }
-    p:nth-of-type(1){
-      display: none;
-    }
-    p{
-      margin-bottom: 20px;
-      font-size: 1rem;
-      line-height: 1.6em;
-      color: var(--black);
-    }
-    strong {
-      display: block;
     }
   }
   @media ${device.tablet}{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    display: flex;
     > div:first-child{
+      width: 50%;
+      margin-right: 30px;
       header{
         display: none;
       }
     }
     > div:last-child{
-      h1{
-        font-weight: bold;
-        font-size: 1.6rem;
-        line-height: 1.2em;
-        margin-bottom: 0;
+      width: 50%;
+      .meta-description{
         display: block;
-      }
-      p:nth-of-type(1){
-        display: inline-block;
-        a{
-          color: var(--red-brand);
-          text-decoration: none;
+        h1{
+          font-weight: bold;
+          font-size: 1.4rem;
+          line-height: 1.2em;
+          margin-bottom: 0;
+          display: block;
+        }
+        p:nth-of-type(1){
+          display: inline-block;
+          a{
+            color: var(--red-brand);
+            text-decoration: none;
+          }
+        }
+        p {
+          margin-bottom: 20px;
+          font-size: 1rem;
+          line-height: 1.6em;
+          color: var(--black);
         }
       }
     }
@@ -67,12 +65,14 @@ export const Grid = styled.section`
 
 export const SelectWrapper = styled.div`
   margin-top: 10px;
+  > strong {
+    margin-bottom: 20px;
+  }
   > div {
+    display: inline-block;
     position: relative;
-    padding-left: 3.8rem;
     min-height: 3rem;
     margin-top: -0.4375em;
-    margin-bottom: 1.5em;
     input {
       position: absolute;
       overflow: hidden;
@@ -125,6 +125,7 @@ export const SelectWrapper = styled.div`
       border: none;
       margin: 0rem;
       padding: 0rem;
+      margin-bottom: 1em;
     }
   }
 `
