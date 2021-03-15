@@ -76,7 +76,7 @@ module.exports = {
           : '#fff',
         theme_color: manifest.hasOwnProperty('theme_color')
           ? manifest.theme_color
-          : '#333',
+          : '#f08484',
         display: manifest.hasOwnProperty('display')
           ? manifest.display
           : 'standalone',

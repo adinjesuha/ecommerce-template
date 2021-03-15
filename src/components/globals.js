@@ -77,9 +77,9 @@ export const Button = styled.button`
   }
 
   &:disabled{
-    border-color: #999;
     cursor: not-allowed;
-    color: #999;
+    color: var(--red-brand-60);
+    background-color: var(--red-20);
   }
   ${props => props.fullWidth && css`
     display: block;

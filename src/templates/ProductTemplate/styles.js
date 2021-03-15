@@ -61,11 +61,12 @@ export const Grid = styled.section`
       }
     }
   }
-`
+` 
 
 export const SelectWrapper = styled.div`
   margin-top: 10px;
   > strong {
+    display: block;
     margin-bottom: 20px;
   }
   > div {

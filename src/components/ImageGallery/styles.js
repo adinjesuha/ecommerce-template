@@ -10,8 +10,13 @@ export const ImageGalleryWrapper = styled.section`
       height: 100%;
     }
   }
+  .only{
+    display: block;
+    width: 100%;
+    height: 230px;
+  }
   @media ${device.mobile}{
-    .selected-image{
+    .selected-image, .only{
       height: 500px;
       display: block;
       width: 100%;

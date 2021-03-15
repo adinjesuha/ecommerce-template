@@ -106,18 +106,22 @@ export default function ImageGallery({images, selectedVariantImageId}){
     setActiveImageThumbnail(image)
   }
   return (
-    <ImageGalleryWrapper>
-      <div className="selected-image">
+    <ImageGalleryWrapper only={!images.length > 1}>
+      <div 
+        className={`selected-image ${images.length > 1 ? '' : 'only'}`}
+      >
         <Image 
           fluid={activeImageThumbnail.localFile.childImageSharp.fluid}
           imgStyle={{ objectFit: 'contain' }}
         />
       </div>
-      <SliderThumbnail 
-        images={images} 
-        handleClick={handleClick}
-        activeImageThumbnail={activeImageThumbnail} 
-      />
+      {images.length > 1 ? (
+        <SliderThumbnail 
+          images={images} 
+          handleClick={handleClick}
+          activeImageThumbnail={activeImageThumbnail} 
+        />
+      ) : ''}
     </ImageGalleryWrapper>
   )
 }
