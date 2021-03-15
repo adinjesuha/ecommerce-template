@@ -16,7 +16,6 @@ import Breadcrumbs from '../../components/Breadcrumbs'
 export default function ProductTemplate({data}){
   const { getProductById } = useContext(CartContext)
   const { title, images, shopifyId, description, vendor } = data.shopifyProduct
-  const { handle } = data.shopifyCollection
   
   const [ product, setProduct ] = useState(null)
   const [ selectedVariant, setSelectedVariant ] = useState(null)
@@ -47,7 +46,7 @@ export default function ProductTemplate({data}){
         <Breadcrumbs
           productTitle={title}
           collectionTitle={data.shopifyCollection?.title}
-          collectionPath={handle}
+          collectionPath={data.shopifyCollection?.handle}
           separator="/"
         />
         <Grid>
