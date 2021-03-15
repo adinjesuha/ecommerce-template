@@ -1,14 +1,18 @@
 import styled from 'styled-components'
 import { StyledLink } from '../StyledLink'
+import { device } from '../../utils/breakpoints';
 
 
 const HeaderBase = styled.header`
-  background: #fff;
+  background: var(--red-brand);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1030;
+  @media ${device.tablet}{
+    background: #fff;
+  }
 `
 
 export const HeaderWrapper = styled(HeaderBase)`
@@ -21,19 +25,45 @@ export const HeaderWrapper = styled(HeaderBase)`
 export const Nav = styled.nav`
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 10px 10px;
   max-width: 1360px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
+  justify-content: space-between;
+
+  *:nth-child(3){
+    order: 4;
+  }
+
   ${StyledLink}{
-    color: black;
+    color: var(--blue-brand);
     text-decoration: none;
-    &:first-of-type{
-      margin-right: 1.5rem;
+    > img {
+      vertical-align: middle;
+      width: 80px;
     }
     &:hover{
       text-decoration: underline;
+    }
+  }
+  @media ${device.tablet}{
+    padding: 10px 20px;
+    > button {
+      margin-right: 1rem;   
+    }
+    *:nth-child(3){
+      order: initial;
+    }
+    ${StyledLink}{
+      > img {
+        vertical-align: middle;
+        width: 100px;
+      }
+      &:first-of-type{
+        margin-right: 1.5rem;
+      }
     }
   }
 `

@@ -3,13 +3,14 @@ import { FaSearch } from 'react-icons/fa'
 import { navigate, useLocation } from '@reach/router'
 import queryString from 'query-string'
 
-import { SearchForm } from './styles'
+import { SearchForm, SearchFormWrapper } from './styles'
 import { Button, Input } from '../globals'
 
 export default function Search(){
+  const [ hidesearchInput, setHideSearchInput ] = useState(false)
   const [ searchTerm, setSearchTerm ] = useState('')
   const { search } = useLocation()
-  const c = queryString.parse(search)?.c || '';
+  const c = queryString.parse(search)?.c || ''
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -19,17 +20,27 @@ export default function Search(){
       navigate(`/all-products?s=${encodeURIComponent(searchTerm)}`)
     }
   }
+  const handleSearchInput = e => {
+    e.preventDefault()
+    setHideSearchInput(!hidesearchInput)
+  }
+
   return(
-    <SearchForm onSubmit={handleSubmit}>
-      <Input  
-        value={searchTerm} 
-        onChange={(e) => setSearchTerm(e.currentTarget.value)} 
-        placeholder="Search" 
-        searchInput
-      />
-      <Button searchButton>
+    <SearchFormWrapper hideSearchInput={hidesearchInput}>
+      <SearchForm onSubmit={handleSubmit} hideSearchInput={hidesearchInput}>
+        <Input  
+          value={searchTerm} 
+          onChange={(e) => setSearchTerm(e.currentTarget.value)} 
+          placeholder="Search" 
+          searchInput
+        />
+        <Button searchButton>
+          <FaSearch />
+        </Button>
+      </SearchForm>
+      <Button onClick={handleSearchInput}>
         <FaSearch />
       </Button>
-    </SearchForm>
+    </SearchFormWrapper>
   )
 }

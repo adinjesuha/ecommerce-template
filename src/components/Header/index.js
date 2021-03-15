@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import PropTypes from "prop-types"
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import { MdMenu } from 'react-icons/md'
 
 import { HeaderWrapper, Nav } from './styles'
 import Cart from '../Cart/index'
 import { StyledLink } from "../StyledLink"
 import Search from '../Search'
+import { Button } from '../globals';
 
 const Header = ({ metaData }) => {
   const [hideNavbarOnScroll, setHideNavbarOnScroll] = useState(true);
@@ -28,22 +30,22 @@ const Header = ({ metaData }) => {
   return (
     <HeaderWrapper show={hideNavbarOnScroll}>
       <Nav>
+        <Button isHamburger>
+          <MdMenu />
+        </Button>
         <StyledLink to="/">
           {logoUrl ? (
             <img
               src={logoUrl}
               width="100"
               height="auto"
-              alt={storeName}
-              style={{
-                verticalAlign: 'middle'
-              }}  
+              alt={storeName} 
             />
           ) : (
             {storeName}
           )}
         </StyledLink>
-        <StyledLink to="/all-products">All Products</StyledLink>
+        {/* <StyledLink to="/all-products">All Products</StyledLink> */}
         <Search />
         <Cart />
       </Nav>

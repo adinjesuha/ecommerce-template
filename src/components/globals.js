@@ -90,6 +90,15 @@ export const Button = styled.button`
     border-bottom-left-radius: 0;
     padding: 0 14px;
   `}
+  ${props => props.isHamburger && css`
+    /* background-color: transparent; */
+    padding: 0 5px;
+    > svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--blue-brand);
+    }
+  `}
 `
 
 export const Input = styled.input`
