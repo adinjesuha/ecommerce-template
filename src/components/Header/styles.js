@@ -4,15 +4,12 @@ import { device } from '../../utils/breakpoints';
 
 
 const HeaderBase = styled.header`
-  background: var(--red-brand);
+  background: #fff;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1030;
-  @media ${device.tablet}{
-    background: #fff;
-  }
 `
 
 export const HeaderWrapper = styled(HeaderBase)`
@@ -36,6 +33,13 @@ export const Nav = styled.nav`
   *:nth-child(3){
     order: 4;
   }
+  
+  > button {
+    background: #fff;
+    &:hover:not(:disabled){
+      background: #fff;
+    }
+  }
 
   ${StyledLink}{
     color: var(--blue-brand);
@@ -58,12 +62,16 @@ export const Nav = styled.nav`
     }
     ${StyledLink}{
       > img {
-        vertical-align: middle;
         width: 100px;
       }
       &:first-of-type{
         margin-right: 1.5rem;
       }
+    }
+  }
+  @media ${device.laptop}{
+    > button {
+      display: none;
     }
   }
 `

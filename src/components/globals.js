@@ -51,7 +51,7 @@ export const LayoutWrapper = styled.div`
 `
 
 export const Button = styled.button`
-  background: var(--bgColor);
+  background: var(--red-brand);
   border: 0px solid transparent;
   border-radius: 4px;
   outline: none;
@@ -81,6 +81,14 @@ export const Button = styled.button`
     color: var(--red-brand-60);
     background-color: var(--red-20);
   }
+  ${props => props.secondary && css`
+    background: transparent;
+    border: 1px solid var(--red-brand);
+    color: var(--red-brand);
+    &:hover{
+      border: 1px solid var(--red-brand-60);
+    }
+  `}
   ${props => props.fullWidth && css`
     display: block;
     width: 100%
@@ -120,5 +128,8 @@ export const Input = styled.input`
   &:focus{
     border-color: var(--red-brand);
     outline: none;
+  }
+  &::placeholder{
+    color: #ccc;
   }
 `

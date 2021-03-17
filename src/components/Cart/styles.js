@@ -28,3 +28,29 @@ export const CartWrapper = styled(StyledLink).attrs(() => ({
     padding-left: 1rem;
   }
 ` 
+
+export const CartCount = styled.span`
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -6px;
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  &:after{
+    content: attr(data-header-cart-count);
+    display: block;
+    height: 22px;
+    min-width: 22px;
+    padding: 3px;
+    font-size: 0.6875rem;
+    line-height: 12px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--red-brand);
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+  @media ${device.tablet}{
+    right: -14px;
+  }
+`

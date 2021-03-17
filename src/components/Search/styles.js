@@ -1,6 +1,43 @@
 import styled, { css } from 'styled-components'
 import { device } from '../../utils/breakpoints'
 
+export const SearchFormWrapper = styled.div`
+  background-color: var(--red-brand);
+  margin-left: -10px;
+  margin-bottom: -10px;
+  margin-right: -10px;
+  padding: ${props => props.hideSearchInput ? '0' : '10px'};;
+  width: calc(100% + 20px);
+  height: ${props => props.hideSearchInput ? 'auto' : '64px'};
+  > button {
+    background-color: ${props => props.hideSearchInput ? '#fff' : 'var(--red-brand)'};
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    > svg {
+      fill: var(--blue-brand);
+    }
+    &:hover:not(:disabled){
+      background-color: ${props => props.hideSearchInput ? '#fff' : 'var(--red-brand)'};
+    }
+  }
+  @media ${device.tablet}{
+    background-color: transparent;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 0;
+    width: auto;
+    height: auto;
+    > button {
+      display: none;
+    }
+  }
+`
+
 export const SearchForm = styled.form`
   display: flex;
   > button {
@@ -30,40 +67,6 @@ export const SearchForm = styled.form`
     @media ${device.tablet}{
       input {
         display: block;
-      }
-    }
-  `}
-`
-
-export const SearchFormWrapper = styled.div`
-  width: 100%;
-  > button {
-    background-color: #fff;
-    display: inline-block;
-    position: absolute;
-    top: 10px;
-    left: 50px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    > svg {
-      fill: var(--blue-brand);
-    }
-    &:hover:not(:disabled) {
-      background-color: #fff;
-    }
-  }
-  @media ${device.tablet}{
-    margin-left: auto;
-    width: auto;
-    > button {
-      display: none;
-    }
-  }
-  ${props => props.hideSearchInput && css `
-    > button {
-      background-color: transparent;
-      &:hover:not(:disabled) {
-        background-color: transparent;
       }
     }
   `}

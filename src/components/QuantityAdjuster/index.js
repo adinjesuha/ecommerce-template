@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa'
 import { QuantityAdjusterWrapper, AdjusterButton } from './styles'
 
 export default function QuantityAdjuster({item, onAdjust}){
@@ -14,9 +15,13 @@ export default function QuantityAdjuster({item, onAdjust}){
 
   return (
     <QuantityAdjusterWrapper>
-      <AdjusterButton onClick={handledecrementQuantity}>-</AdjusterButton>
+      <AdjusterButton onClick={handledecrementQuantity}>
+        <FaMinusCircle />
+      </AdjusterButton>
       <div>{quantity}</div>
-      <AdjusterButton onClick={handleincrementQuantity}>+</AdjusterButton>
+      <AdjusterButton onClick={handleincrementQuantity}>
+        <FaPlusCircle />
+      </AdjusterButton>
     </QuantityAdjusterWrapper>
   )
 }

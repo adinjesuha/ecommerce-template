@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
 import CartContext from '../../context/CartContext'
 
-import { CartWrapper } from './styles'
+import { CartWrapper, CartCount } from './styles'
 
 export default function Cart(){
   const  { checkout } = useContext(CartContext)
@@ -14,6 +14,7 @@ export default function Cart(){
   }
   return (
     <CartWrapper>
+      <CartCount data-header-cart-count={totalQuantity} isVisible={totalQuantity}/>
       <FaShoppingCart size="1.5em"/>
       {/* <div>
         {totalQuantity} item(s) / L. {checkout?.totalPrice || '0.00'}

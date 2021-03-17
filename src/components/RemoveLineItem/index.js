@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { FaTrashAlt } from 'react-icons/fa'
+import { MdClear } from 'react-icons/md'
 import CartContext from '../../context/CartContext'
 import { Icon } from './styles'
 
@@ -10,7 +10,7 @@ export default function RemoveLineItem({lineItemId}){
   }
   return (
     <Icon onClick={handleClick}>
-      <FaTrashAlt />
+      <MdClear />
     </Icon>
   )
 }

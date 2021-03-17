@@ -7,7 +7,7 @@ import { LayoutWrapper } from '../components/globals'
 const CartPage = () => {
   return  (
     <Layout>
-      <SEO title="Cart" />
+      <SEO title="Carrito de Compras" />
       <LayoutWrapper>
         <CartContent/>
       </LayoutWrapper>

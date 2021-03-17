@@ -7,7 +7,7 @@ import { SearchForm, SearchFormWrapper } from './styles'
 import { Button, Input } from '../globals'
 
 export default function Search(){
-  const [ hidesearchInput, setHideSearchInput ] = useState(false)
+  const [ hidesearchInput, setHideSearchInput ] = useState(true)
   const [ searchTerm, setSearchTerm ] = useState('')
   const { search } = useLocation()
   const c = queryString.parse(search)?.c || ''
@@ -31,7 +31,7 @@ export default function Search(){
         <Input  
           value={searchTerm} 
           onChange={(e) => setSearchTerm(e.currentTarget.value)} 
-          placeholder="Search" 
+          placeholder="Estoy buscando..." 
           searchInput
         />
         <Button searchButton>
