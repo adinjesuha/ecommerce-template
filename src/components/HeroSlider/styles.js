@@ -79,5 +79,8 @@ export const StyledSliderItem = styled.div`
 	> a div{
 		height: 300px;
 		width: 100%;
+		> img{
+			width: 100%;
+		}
 	}
 `

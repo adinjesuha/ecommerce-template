@@ -3,17 +3,20 @@ import React, { useState, useEffect, useContext } from 'react'
 import { graphql, Link } from 'gatsby'
 import { navigate, useLocation } from '@reach/router'
 import queryString from 'query-string'
+import loadable from '@loadable/component';
 import CartContext from '../../context/CartContext'
 
 import SEO from '../../components/seo'
 import Layout from '../../components/layout'
 import ImageGallery from '../../components/ImageGallery'
 import ProductQuantityAdder from '../../components/ProductQuantityAdder'
-import { Grid, SelectWrapper, Price } from './styles'
+import { Grid, SelectWrapper, Price, ShareButtonsSection } from './styles'
 import { LayoutWrapper } from '../../components/globals'
 import Breadcrumbs from '../../components/Breadcrumbs'
 
-export default function ProductTemplate({data}){
+const ShareButtons = loadable(() => import('../../components/ShareButtons'));
+
+export default function ProductTemplate({data, location}){
   const { getProductById } = useContext(CartContext)
   const { title, images, shopifyId, description, vendor } = data.shopifyProduct
   
@@ -38,6 +41,12 @@ export default function ProductTemplate({data}){
       replace: true
     })
   }
+
+  const shareButtons = [
+    'Facebook',
+    'Twitter',
+    'Whatsapp',
+  ]
 
   return(
     <Layout>
@@ -102,6 +111,10 @@ export default function ProductTemplate({data}){
                 variantId={selectedVariant.id}
               />
             )}
+            <ShareButtonsSection>
+              <p>Compartelo: </p>
+              <ShareButtons buttons={shareButtons} location={location.href} />
+            </ShareButtonsSection>
           </div>
         </Grid>
       </LayoutWrapper>

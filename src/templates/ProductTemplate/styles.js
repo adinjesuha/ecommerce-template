@@ -138,3 +138,12 @@ export const Price = styled.div`
   font-size: 1.6rem;
   font-weight: bold;
 `
+
+export const ShareButtonsSection = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  > p{
+    margin-right: 1rem;
+  }
+`

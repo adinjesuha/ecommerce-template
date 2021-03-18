@@ -15,7 +15,7 @@ export const ImageGalleryWrapper = styled.section`
     width: 100%;
     height: 230px;
   }
-  @media ${device.mobile}{
+  @media ${device.mobileL}{
     .selected-image, .only{
       height: 500px;
       display: block;

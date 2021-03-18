@@ -8,7 +8,7 @@ export const ImageThumbNailWrapper = styled.div`
     height: 100%;
     margin: 0 !important;
   }
-  @media ${device.mobile}{
+  @media ${device.mobileL}{
     padding: 4px;
     height: 60px;
     width: 60px;

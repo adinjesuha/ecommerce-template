@@ -99,7 +99,6 @@ export const Button = styled.button`
     padding: 0 14px;
   `}
   ${props => props.isHamburger && css`
-    /* background-color: transparent; */
     padding: 0 5px;
     > svg {
       width: 30px;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
+// import BackgroundImage from 'gatsby-background-image'
+import Image from 'gatsby-image'
 // Styles
 import { StyledHeroSlider, StyledSliderItem } from './styles'
 
@@ -26,7 +27,9 @@ const HeroSlider = ({collections}) => {
 			{collections.map(collection => (
 				<StyledSliderItem key={collection.shopifyId}>
 					<Link to={`/${collection.handle}`}>
-						<BackgroundImage fluid={collection.image?.localFile.childImageSharp.fluid}/>
+						<div>
+							<Image fluid={collection.image?.localFile.childImageSharp.fluid}/>
+						</div>
 					</Link>
 				</StyledSliderItem>
 			))}

@@ -37,7 +37,7 @@ export const StyledSliderThumbnail = styled(Slider)`
       background-color: var(--red-brand);
     }
   }
-  @media ${device.mobile}{
+  @media ${device.mobileL}{
     width: 300px;
     margin: 0 auto;
   }
