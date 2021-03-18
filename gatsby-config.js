@@ -15,13 +15,14 @@ module.exports = {
       storeDescription: 'Alimento Premium para tu mascota',
       email: 'ventas@petsclubhn.com',
       logoUrl: 'https://cdn.shopify.com/s/files/1/0495/5111/4394/files/logo.png?v=1615567443',
-      company: `'Pet's Club Honduras'`,
+      company: `Pet's Club Honduras`,
+      about: `Somos la tienda para mascotas online 100% hondureña. Compra alimento para mascotas, juguetes, anti pulgas y más.`,
       location: 'Tegucigalpa, Honduras',
-      address: '1 Centre St.',
       phone: '+504 9676-1154',
-      workingDays: 'Lunes - Sabado',
-      workingHours: '8AM - 8PM',
-      socialNetworks: [],
+      socialNetworks: [
+        'https://facebook.com/petsclubHonduras',
+        'https://instagram.com/petsclub_store',
+      ],
       payments: [],
       // For available socia share buttons see: https://github.com/nygardk/react-share
       shareButtons: [],
@@ -33,7 +34,20 @@ module.exports = {
       mainPage: [],
       // Menu types: "header", "collection", "product", "link"
       menu: {},
-      footerLinks: [],
+      footerLinks: [
+        {
+          name: 'Terminos del servicio',
+          link: '/policy/termsOfService',
+        },
+        {
+          name: 'Política de privacidad',
+          link: '/policy/privacyPolicy',
+        },
+        {
+          name: 'Eeembolsos',
+          link: '/policy/refundPolicy',
+        },
+      ],
       locales: 'es-HN',
       currency: 'LPS',
       productsPerCollectionPage: '10',

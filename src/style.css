@@ -1,16 +1,7 @@
 @charset "utf-8";
 
 :root {
-  --purp: #524763;
-  --purp-20: #6a5c80;
-  --purp-60: #b8afc5;
-  --darkPurp: #373142;
-  --xtraPurp: #191324;
   --grey: #d8d8d8;
-  --green: #cbe56c;
-  --green-20: #daed97;
-  --teal: #82d8d8;
-  --teal-20: #b1e7e7;
   --red: #e54b4b;
   --red-20: #f08484;
   --red-brand: #f04359;

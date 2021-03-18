@@ -61,7 +61,7 @@ export const Button = styled.button`
   box-shadow: none;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
+  letter-spacing: 1px;
   cursor: pointer;
   text-transform: uppercase;
   color: white;
@@ -113,12 +113,18 @@ export const Input = styled.input`
   display: block;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #626262;
+  letter-spacing: 1px;
   border-radius: 4px;
   padding: 5px 10px;
   height: 44px;
   box-sizing: border-box;
   min-width: 0;
   transition: border-color .3s ease;
+  ${props => props.isNewsletter && css`
+    width: 100%;
+  `}
   ${props => props.searchInput && css`
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -129,6 +135,6 @@ export const Input = styled.input`
     outline: none;
   }
   &::placeholder{
-    color: #ccc;
+    color: var(--white-60);
   }
 `

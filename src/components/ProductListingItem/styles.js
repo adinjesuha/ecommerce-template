@@ -4,15 +4,19 @@ import { device } from '../../utils/breakpoints'
 export const ProductItemWrapper = styled.article`
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  margin-left: -20px;
+  margin-right: -20px;
   a{
     margin: 0 !important;
     text-decoration: none;
     color: #000;
   }
-  @media ${device.mobile}{
+  @media ${device.mobileL}{
     border: 1px solid #ddd;
     box-shadow: 0 1px 0 #ccc;
     border-radius: 5px;
+    margin-left: 0;
+    margin-right: 0;
   }
 `
 
@@ -22,7 +26,7 @@ export const ProductItemContainer = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  @media ${device.mobile}{
+  @media ${device.mobileL}{
     padding: 15px 15px 50px;
     flex-direction: column;
   }
@@ -57,7 +61,7 @@ export const ProductContentLeft = styled.div`
     border: 0px solid transparent;
     background: transparent;
   }
-  @media ${device.mobile}{
+  @media ${device.mobileL}{
     width: 100%;
     .image-wrapper{
       height: 220px;
@@ -68,7 +72,7 @@ export const ProductContentLeft = styled.div`
 
 export const ProductContentRight = styled.div`
   width: 70%;
-  padding-left: 10px;
+  padding-left: 20px;
   > h2{
     font-size: 0.9rem;
     font-weight: 400;
@@ -78,7 +82,7 @@ export const ProductContentRight = styled.div`
     margin: 10px 0px;
     
   }
-  @media ${device.mobile}{
+  @media ${device.mobileL}{
     width: 100%;
     margin-top: 1rem;
     padding-left: 0;
@@ -103,7 +107,7 @@ export const ProductInfo = styled.div`
     font-weight: 700;
     margin-bottom: 4px;
   }
-  @media ${device.mobile}{
+  @media ${device.mobileL}{
     padding: 10px 15px;
     position: absolute;
     bottom: 0px;

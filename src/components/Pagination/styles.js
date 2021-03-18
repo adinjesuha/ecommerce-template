@@ -18,10 +18,11 @@ export const PaginationWrapper = styled.nav`
     }
     li:first-of-type a span{
       margin-left: 0;
-      margin-right: 0.3125rem;
+      margin-right: 0.2125rem;
     }
     li{
       font-size: 0.9375rem;
+      /* font-size: 0.8375rem; */
       display: inline-block;
       > span.current-item{
         color: #3c3761;
@@ -31,7 +32,7 @@ export const PaginationWrapper = styled.nav`
       }
       > a{
         display: inline-block;
-        padding: 0.5625rem 0.6875rem;
+        padding: 0.4625rem 0.5875rem;
         text-decoration: none;
         color: #ff274e;
         text-decoration: none;
