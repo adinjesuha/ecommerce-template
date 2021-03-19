@@ -16,7 +16,7 @@ import Breadcrumbs from '../../components/Breadcrumbs'
 
 const ShareButtons = loadable(() => import('../../components/ShareButtons'));
 
-export default function ProductTemplate({data, location}){
+export default function ProductTemplate({data, location }){
   const { getProductById } = useContext(CartContext)
   const { title, images, shopifyId, description, vendor } = data.shopifyProduct
   
@@ -48,6 +48,8 @@ export default function ProductTemplate({data, location}){
     'Whatsapp',
   ]
 
+  console.log(location)
+
   return(
     <Layout>
       <SEO description={data.shopifyProduct.description} title={data.shopifyProduct.title} />
@@ -55,7 +57,7 @@ export default function ProductTemplate({data, location}){
         <Breadcrumbs
           productTitle={title}
           collectionTitle={data.shopifyCollection?.title}
-          collectionPath={data.shopifyCollection?.handle}
+          collectionPath={location.state.location}
           separator="/"
         />
         <Grid>
@@ -70,7 +72,6 @@ export default function ProductTemplate({data, location}){
             <div className="meta-description">
               <h1>{title}</h1>
               <p>por <Link to="/">{vendor}</Link></p>
-              <p>{description}</p>
             </div>
             {!!selectedVariant && (
               <Price>L. {selectedVariant.price}</Price>
@@ -115,6 +116,7 @@ export default function ProductTemplate({data, location}){
               <p>Compartelo: </p>
               <ShareButtons buttons={shareButtons} location={location.href} />
             </ShareButtonsSection>
+            <p>{description}</p>
           </div>
         </Grid>
       </LayoutWrapper>

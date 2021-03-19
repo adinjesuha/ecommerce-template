@@ -21,7 +21,7 @@ const Pagination = ({isFirst, isLast, prevPage, numPages, handle, currentPage, n
         let pageNum = i + 1
         if(pageNum === currentPage){
           return (
-            <li>
+            <li key={i}>
               <span className="current-item">{i + 1}</span>
             </li>
           )

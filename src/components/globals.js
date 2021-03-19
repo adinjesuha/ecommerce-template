@@ -109,13 +109,13 @@ export const Button = styled.button`
 `
 
 export const Input = styled.input`
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
-  color: #626262;
-  letter-spacing: 1px;
+  font-weight: lighter;
+  color: var(--black);
+  letter-spacing: .5px;
   border-radius: 4px;
   padding: 5px 10px;
   height: 44px;
@@ -135,6 +135,6 @@ export const Input = styled.input`
     outline: none;
   }
   &::placeholder{
-    color: var(--white-60);
+    color: #eee;
   }
 `

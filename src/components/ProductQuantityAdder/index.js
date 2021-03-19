@@ -14,12 +14,14 @@ export default function ProductQuantityAdder({ variantId, available}){
 
   const handleSubmit = e => {
     e.preventDefault()
-    updateLineItem({ variantId, quantity: parseInt(quantity, 10) })
+    updateLineItem({ 
+      variantId, quantity: parseInt(quantity, 10) 
+    })
   }
 
   return (
     <ProductQuantityAdderWrapper>
-      <strong>Quantity</strong>
+      <strong>Cantidad</strong>
       <form onSubmit={handleSubmit}>
         <Input
           type="number" 

@@ -36,6 +36,9 @@ export const Grid = styled.section`
     }
     > div:last-child{
       width: 50%;
+      p:last-child {
+        margin-top: 30px !important;
+      }
       .meta-description{
         display: block;
         h1{
@@ -51,12 +54,6 @@ export const Grid = styled.section`
             color: var(--red-brand);
             text-decoration: none;
           }
-        }
-        p {
-          margin-bottom: 20px;
-          font-size: 1rem;
-          line-height: 1.6em;
-          color: var(--black);
         }
       }
     }
@@ -140,10 +137,16 @@ export const Price = styled.div`
 `
 
 export const ShareButtonsSection = styled.div`
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: flex;
   align-items: center;
   > p{
     margin-right: 1rem;
+  }
+  + p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6em;
+    color: var(--black);
   }
 `

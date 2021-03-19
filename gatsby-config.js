@@ -44,14 +44,12 @@ module.exports = {
           link: '/policy/privacyPolicy',
         },
         {
-          name: 'Eeembolsos',
+          name: 'Reembolsos',
           link: '/policy/refundPolicy',
         },
       ],
       locales: 'es-HN',
       currency: 'LPS',
-      productsPerCollectionPage: '10',
-      articlesPerBlogPage: '6',
     },
   },
   plugins: [

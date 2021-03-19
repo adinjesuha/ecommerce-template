@@ -70,7 +70,7 @@ const Footer = () => {
             </div>
           </div>
         </FooterBlocks>
-        <p class="site-footer-credits">{`Todos los derechos reservados © ${year} ${company}.`}</p>
+        <p className="site-footer-credits">{`Todos los derechos reservados © ${year} ${company}.`}</p>
       </LayoutWrapper>
     </FooterWrapper>
   )

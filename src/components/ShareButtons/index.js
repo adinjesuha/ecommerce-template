@@ -4,7 +4,6 @@ import * as ReactShare from 'react-share';
 import { ShareButtonsWrapper, ButtonWrapper } from './styles';
 
 const ShareButtons = ({ buttons, location }) => {
-  console.log(buttons, location)
   return (
     <ShareButtonsWrapper>
       {buttons.map((button, index) => {

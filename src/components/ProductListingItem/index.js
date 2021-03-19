@@ -10,7 +10,7 @@ import {
   ProductInfo 
 } from './styles'
 
-const ProductsListingItem = ({ product }) => {
+const ProductsListingItem = ({ product, handle }) => {
   const {
     images: [firstImage],
     variants,
@@ -21,6 +21,7 @@ const ProductsListingItem = ({ product }) => {
       <Link
         to={`/products/${product.handle}`}
         style={{ display: "block", marginBottom: "2rem" }}
+        state={{location: handle}}
       >
         <ProductItemContainer>
           <ProductContentLeft>
@@ -39,7 +40,10 @@ const ProductsListingItem = ({ product }) => {
             )}
           </ProductContentLeft>
           <ProductContentRight>
-            <h2>{product.title}, {variants[0].title}</h2>
+            <h2>
+              {product.title}
+              {variants.length > 1 ? `, ${variants[0].title}` : ''}
+            </h2>
             <ProductInfo>
               <p className="product-vendor">{vendor}</p>
               <p className="product-price"><span>L. </span>{variants[0].price}</p>

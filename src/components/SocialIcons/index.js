@@ -6,13 +6,25 @@ import { SocialIconsWrapper, IconWrapper } from './style';
 const SocialIcon = ({ url, mail }) => {
   return (
     <SocialIconsWrapper>
-      <IconWrapper href={url[0]}>
+      <IconWrapper 
+        href={url[0]}
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
         <FaFacebookF />
       </IconWrapper>
-      <IconWrapper href={url[1]}>
+      <IconWrapper 
+        href={url[1]}
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
         <FaInstagram />
       </IconWrapper>
-      <IconWrapper href={`mailto:${mail}`}>
+      <IconWrapper 
+        href={`mailto:${mail}`}
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
         <FaEnvelope />
       </IconWrapper>
     </SocialIconsWrapper>

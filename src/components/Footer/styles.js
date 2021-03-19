@@ -10,7 +10,6 @@ export const FooterWrapper = styled.footer`
   .site-footer-credits {
     color: #dcdcdc;
     font-size: 0.8125rem;
-    font-weight: lighter;
     text-align: left;
     margin-top: 2rem;
     margin-bottom: 0;
