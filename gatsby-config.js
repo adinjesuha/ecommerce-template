@@ -14,7 +14,7 @@ module.exports = {
       storeName: `Pet's Club`,
       storeDescription: 'Alimento Premium para tu mascota',
       email: 'ventas@petsclubhn.com',
-      logoUrl: 'https://cdn.shopify.com/s/files/1/0495/5111/4394/files/logo.png?v=1615567443',
+      logoUrl: 'https://cdn.shopify.com/s/files/1/0495/5111/4394/files/petsclub-logo.png?v=1616179325',
       company: `Pet's Club Honduras`,
       about: `Somos la tienda para mascotas online 100% hondureña. Compra alimento para mascotas, juguetes, anti pulgas y más.`,
       location: 'Tegucigalpa, Honduras',

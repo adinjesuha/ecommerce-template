@@ -47,6 +47,7 @@ export const Nav = styled.nav`
     > img {
       vertical-align: middle;
       width: 80px;
+      height: auto;
     }
     &:hover{
       text-decoration: underline;

@@ -21,11 +21,14 @@ export const StyledHeroSlider = styled(Slider)`
 		opacity: 0.7;
 		transition: opacity .3s ease;
 		&::before{
-			display: none;
+			content: "";
 		}
 		&:hover{
 			opacity: 1;
 			outline: none;
+			background-image: url(${require('../../images/arrow-right-white.svg')});
+			background-position: 9px;
+			background-repeat: no-repeat;
 		}
 	}
 	.slick-prev{

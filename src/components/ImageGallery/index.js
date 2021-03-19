@@ -32,9 +32,10 @@ export const StyledSliderThumbnail = styled(Slider)`
           border: 1px solid var(--red-brand);
         }
       }
-    }
-    .slick-active > button:before{
-      background-color: var(--red-brand);
+      &.slick-active button:before{
+        background-color: var(--red-brand);
+        color: transparent;
+      }
     }
   }
   @media ${device.mobileL}{

@@ -38,7 +38,7 @@ const Header = ({ metaData }) => {
             <img
               src={logoUrl}
               width={100}
-              height={`auto`}
+              height='auto'
               alt={storeName} 
             />
           ) : (
