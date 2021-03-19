@@ -34,7 +34,7 @@ export default function Search(){
           placeholder="Estoy buscando..." 
           searchInput
         />
-        <Button searchButton>
+        <Button searchButton name="search-button">
           <FaSearch />
         </Button>
       </SearchForm>

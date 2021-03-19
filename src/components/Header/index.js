@@ -30,15 +30,15 @@ const Header = ({ metaData }) => {
   return (
     <HeaderWrapper show={hideNavbarOnScroll}>
       <Nav>
-        <Button isHamburger>
+        <Button isHamburger name="hamburger-button">
           <MdMenu />
         </Button>
         <StyledLink to="/">
           {logoUrl ? (
             <img
               src={logoUrl}
-              width="100"
-              height="auto"
+              width={100}
+              height={`auto`}
               alt={storeName} 
             />
           ) : (
