@@ -1,9 +1,9 @@
 import React from 'react';
-import { FaFacebookF, FaInstagram, FaEnvelope } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaEnvelope, FaPhone } from 'react-icons/fa'
 import { SocialIconsWrapper, IconWrapper } from './style';
 
 
-const SocialIcon = ({ url, mail }) => {
+const SocialIcon = ({ url, mail, phone }) => {
   return (
     <SocialIconsWrapper>
       <IconWrapper 
@@ -26,6 +26,13 @@ const SocialIcon = ({ url, mail }) => {
         rel="noopener noreferrer"
       >
         <FaEnvelope />
+      </IconWrapper>
+      <IconWrapper 
+        href={`tel:${phone}`}
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <FaPhone />
       </IconWrapper>
     </SocialIconsWrapper>
   )

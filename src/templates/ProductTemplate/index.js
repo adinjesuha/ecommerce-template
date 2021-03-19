@@ -48,8 +48,6 @@ export default function ProductTemplate({data, location }){
     'Whatsapp',
   ]
 
-  console.log(location)
-
   return(
     <Layout>
       <SEO description={data.shopifyProduct.description} title={data.shopifyProduct.title} />
@@ -57,7 +55,7 @@ export default function ProductTemplate({data, location }){
         <Breadcrumbs
           productTitle={title}
           collectionTitle={data.shopifyCollection?.title}
-          collectionPath={location.state.location}
+          collectionPath={location.state?.location}
           separator="/"
         />
         <Grid>

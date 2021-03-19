@@ -59,7 +59,7 @@ const Footer = () => {
           <div className="footer-item">
             <h3>Síguenos</h3>
             <div>
-              <SocialIcons url={socialNetworks} mail={email}/>
+              <SocialIcons url={socialNetworks} mail={email} phone={phone}/>
             </div>
           </div>
           <div className="footer-item">
