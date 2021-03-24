@@ -14,10 +14,6 @@ export const CartWrapper = styled(StyledLink).attrs(() => ({
   align-items: center;
   justify-content: center;
   position: relative;
-  > div:last-child {
-    padding-left: 8px;
-    margin: auto 0;
-  }
   > svg {
     fill: var(--blue-brand);
   }

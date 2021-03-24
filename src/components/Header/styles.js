@@ -13,7 +13,7 @@ const HeaderBase = styled.header`
 `
 
 export const HeaderWrapper = styled(HeaderBase)`
-  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #eee;
   visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
   transition: all 200ms ${(props) => (props.show ? 'ease-in' : 'ease-out')};
   transform: ${(props) => (props.show ? 'none' : 'translate(0, -100%)')};
@@ -22,15 +22,15 @@ export const HeaderWrapper = styled(HeaderBase)`
 export const Nav = styled.nav`
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 10px 10px;
-  max-width: 1360px;
+  padding: 10px 20px;
+  max-width: 1220px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 
   justify-content: space-between;
 
-  *:nth-child(3){
+  *:nth-child(4){
     order: 4;
   }
   
@@ -55,23 +55,20 @@ export const Nav = styled.nav`
   }
   @media ${device.tablet}{
     padding: 10px 20px;
-    > button {
+    > button:first-of-type {
       margin-right: 1rem;   
     }
-    *:nth-child(3){
+    *:nth-child(4){
       order: initial;
     }
     ${StyledLink}{
       > img {
         width: 100px;
       }
-      &:first-of-type{
-        margin-right: 1.5rem;
-      }
     }
   }
   @media ${device.laptop}{
-    > button {
+    > button:first-of-type {
       display: none;
     }
   }

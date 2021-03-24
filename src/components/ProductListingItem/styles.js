@@ -26,6 +26,7 @@ export const ProductItemContainer = styled.div`
   position: relative;
   display: flex;
   width: 100%;
+  border-radius: 5px;
   @media ${device.mobileL}{
     padding: 15px 15px 50px;
     flex-direction: column;

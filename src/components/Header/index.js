@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { MdMenu } from 'react-icons/md'
 
 import { HeaderWrapper, Nav } from './styles'
-import Cart from '../Cart/index'
-import { StyledLink } from "../StyledLink"
-import Search from '../Search'
 import { Button } from '../globals';
+import { StyledLink } from "../StyledLink"
+import Cart from '../Cart/index'
+import Search from '../Search'
+import MenuLinks from './MenuLinks';
 
-const Header = ({ metaData }) => {
+const Header = () => {
   const [hideNavbarOnScroll, setHideNavbarOnScroll] = useState(true);
-
   useScrollPosition(
     ({ prevPos, currPos }) => {
       // Note: prevPos.y > -12 is here to fix Nav component disappearing bug
@@ -25,12 +26,47 @@ const Header = ({ metaData }) => {
     100
   );
 
-  const { storeName, logoUrl } = metaData;
+  const data = useStaticQuery(graphql`
+    query SiteMetaDataQuery {
+      site {
+        siteMetadata {
+          gatsbyStorefrontConfig{
+            storeName
+            logoUrl
+            menu{
+              name
+              link
+              subMenu{
+                name
+                links{
+                  name
+                  link
+                }
+              }
+            }
+          }
+        }
+      }
+      grainFree: file(name: {eq: "grain-free"}) {
+        childImageSharp {
+          fluid(maxHeight: 758, quality: 100){
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
+  const { storeName, logoUrl, menu } = data.site.siteMetadata.gatsbyStorefrontConfig
+
   
   return (
     <HeaderWrapper show={hideNavbarOnScroll}>
       <Nav>
-        <Button isHamburger name="hamburger-button">
+        <Button 
+          isHamburger 
+          name="hamburger-button"
+        >
           <MdMenu />
         </Button>
         <StyledLink to="/">
@@ -45,7 +81,10 @@ const Header = ({ metaData }) => {
             {storeName}
           )}
         </StyledLink>
-        {/* <StyledLink to="/all-products">All Products</StyledLink> */}
+        <MenuLinks 
+          menuLinks={menu}
+          grainFree={data.grainFree.childImageSharp}
+        />
         <Search />
         <Cart />
       </Nav>

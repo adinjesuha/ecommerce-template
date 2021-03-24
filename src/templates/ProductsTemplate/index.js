@@ -25,10 +25,10 @@ export default function ProductsTemplate({pageContext, data}){
   return(
     <Layout>
       <SEO title={data.collection.nodes[0].title} />
-      <HeaderBrand>
-        <Image fluid={data.collection.nodes[0].image.localFile.childImageSharp.fluid}/>
-      </HeaderBrand>
       <LayoutWrapper>
+        <HeaderBrand>
+          <Image fluid={data.collection.nodes[0].image?.localFile.childImageSharp.fluid}/>
+        </HeaderBrand>
         <CatalogProducts
           products={products}
           limit={limit}

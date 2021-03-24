@@ -16,9 +16,6 @@ export default function Cart(){
     <CartWrapper>
       <CartCount data-header-cart-count={totalQuantity} isVisible={totalQuantity}/>
       <FaShoppingCart size="1.5em"/>
-      {/* <div>
-        {totalQuantity} item(s) / L. {checkout?.totalPrice || '0.00'}
-      </div> */}
     </CartWrapper>
   )
 }

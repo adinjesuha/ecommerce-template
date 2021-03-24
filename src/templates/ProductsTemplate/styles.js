@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { device } from '../../utils/breakpoints'
 
 export const HeaderBrand = styled.div`
-  width: 100%;
   height: 70px;
+  margin: 0 -20px;
   > .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
@@ -13,6 +13,11 @@ export const HeaderBrand = styled.div`
   }
   @media ${device.tablet}{
     height: 150px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+    margin: 1.5rem 0;
   }
   @media ${device.laptop}{
     height: 250px;

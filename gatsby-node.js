@@ -35,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   data.allShopifyCollection.nodes.forEach(
     ({handle, products, id}) => {
-      const productsPerPage = 10
+      const productsPerPage = 20
       const collectionProductsCount = products.length;
       const numPages = Math.ceil(collectionProductsCount / productsPerPage);
       Array.from({

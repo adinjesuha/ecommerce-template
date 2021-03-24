@@ -3,14 +3,15 @@ import { device } from '../../utils/breakpoints'
 
 export const SearchFormWrapper = styled.div`
   background-color: var(--red-brand);
-  margin-left: -10px;
-  margin-bottom: -10px;
-  margin-right: -10px;
+  margin-left: -20px;
+  margin-bottom: -11px;
+  margin-right: -20px;
   padding: ${props => props.hideSearchInput ? '0' : '10px'};;
-  width: calc(100% + 20px);
+  width: calc(100% + 40px);
   height: ${props => props.hideSearchInput ? 'auto' : '64px'};
   > button {
     background-color: ${props => props.hideSearchInput ? '#fff' : 'var(--red-brand)'};
+    margin-left: 10px;
     display: inline-block;
     position: absolute;
     top: 10px;

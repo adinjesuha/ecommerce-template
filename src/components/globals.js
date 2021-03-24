@@ -45,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const LayoutWrapper = styled.div`
   margin: 0 auto;
-  max-width: 1360px;
+  max-width: 1220px;
   box-sizing: border-box;
   padding: 0 20px 40px 20px;
 `
@@ -113,7 +113,6 @@ export const Input = styled.input`
   display: block;
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
   color: var(--black);
   letter-spacing: .5px;
   border-radius: 4px;
@@ -135,6 +134,6 @@ export const Input = styled.input`
     outline: none;
   }
   &::placeholder{
-    color: #eee;
+    color: #ddd;
   }
 `

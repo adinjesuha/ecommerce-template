@@ -24,7 +24,7 @@ module.exports = {
         'https://instagram.com/petsclub_store',
       ],
       payments: [],
-      // For available socia share buttons see: https://github.com/nygardk/react-share
+      // For available social share buttons see: https://github.com/nygardk/react-share
       shareButtons: [],
       // 
       // googleAnalyticsId: 'UA-141525658-3',
@@ -33,7 +33,174 @@ module.exports = {
       //
       mainPage: [],
       // Menu types: "header", "collection", "product", "link"
-      menu: {},
+      menu: [
+        {
+          name: 'Perros',
+          link: null,
+          subMenu: [
+            {
+              name: 'Alimento',
+              links: [
+                {
+                  name: 'Alimento Seco',
+                  link: '/alimento-seco-para-perro'
+                },
+                {
+                  name: 'Alimento Humedo',
+                  link: '/alimento-humedo-para-perro'
+                },
+                {
+                  name: 'Alimento Medicado',
+                  link: '/alimento-medicado-para-perro'
+                },
+                {
+                  name: 'Libre de Granos',
+                  link: '/alimento-libre-de-granos-para-perro'
+                },
+                {
+                  name: 'Treats',
+                  link: '/treats-para-perro'
+                },
+              ]
+            },
+            {
+              name: 'Higiene y Olor',
+              links: [
+                {
+                  name: 'Shampoo y Jabón',
+                  link: '/shampoo-y-jabon'
+                },
+                {
+                  name: 'Perfumes',
+                  link: '/shampoo-y-jabon'
+                },
+                {
+                  name: 'Estética',
+                  link: '/estetica'
+                },
+              ],
+            },
+            {
+              name: 'Accesorios',
+              links: [
+                {
+                  name: 'Juguetes',
+                  link: '/juguetes-para-perros'
+                },
+                {
+                  name: 'Camas y Tapetes',
+                  link: '/camas-y-tapetes-para-perros'
+                },
+                {
+                  name: 'Platos y Bebederos',
+                  link: '/platos-y-bebederos-para-perros'
+                },
+              ],
+            },
+            {
+              name: 'Farmacia',
+              links: [
+                {
+                  name: 'Antipulgas',
+                  link: '/antipulgas'
+                },
+                {
+                  name: 'Antibióticos',
+                  link: '/antibioticos'
+                },
+                {
+                  name: 'Desparasitantes',
+                  link: '/desparasitantes'
+                },
+                {
+                  name: 'Suplementos',
+                  link: '/suplementos'
+                },
+              ],
+            },
+            {
+              name: 'Destacado',
+              links: [
+                {
+                  name: 'Alimento Libre de Granos',
+                  link: '/alimento-libre-de-granos'
+                },
+              ],
+            },
+          ]
+        },  
+        {
+          name: 'Gatos',
+          link: null,
+          subMenu: [
+            {
+              name: 'Alimento',
+              links: [
+                {
+                  name: 'Alimento Seco',
+                  link: '/alimento-seco-para-gato'
+                },
+                {
+                  name: 'Alimento Humedo',
+                  link: '/alimento-humedo-para-gato'
+                },
+                {
+                  name: 'Alimento Medicado',
+                  link: '/alimento-medicado-para-gato'
+                },
+                {
+                  name: 'Treats',
+                  link: '/treats-para-gato'
+                },
+              ]
+            },
+            {
+              name: 'Higiene',
+              links: [
+                {
+                  name: 'Arena y Areneros',
+                  link: '/arena-y-areneros'
+                },
+                {
+                  name: 'Limpiza',
+                  link: '/limpieza-para-hogar-gatos'
+                },
+                {
+                  name: 'Grooming y Estética',
+                  link: '/estetica-para-gatos'
+                },
+              ]
+            },
+            {
+              name: 'Accesorios',
+              links: [
+                {
+                  name: 'Rascadores y Juguetes',
+                  link: '/juguetes-para-gatos'
+                },
+                {
+                  name: 'Platos y Bebederos',
+                  link: '/platos-y-bebederos-para-gatos'
+                },
+              ],
+            },
+            {
+              name: 'Destacado',
+              links: [
+                {
+                  name: 'Royal Canin',
+                  link: '/royal-canin'
+                },
+              ],
+            },
+          ]
+        },
+        {
+          name: 'Promociones',
+          link: '/promociones',
+          subMenu: []
+        }
+      ],
       footerLinks: [
         {
           name: 'Terminos del servicio',
