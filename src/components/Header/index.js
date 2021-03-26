@@ -47,7 +47,7 @@ const Header = () => {
           }
         }
       }
-      grainFree: file(name: {eq: "grain-free"}) {
+      menForSan: file(name: {eq: "men-for-san"}) {
         childImageSharp {
           fluid(maxHeight: 758, quality: 100){
             ...GatsbyImageSharpFluid_withWebp
@@ -83,7 +83,7 @@ const Header = () => {
         </StyledLink>
         <MenuLinks 
           menuLinks={menu}
-          grainFree={data.grainFree.childImageSharp}
+          menForSan={data.menForSan.childImageSharp}
         />
         <Search />
         <Cart />

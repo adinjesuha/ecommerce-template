@@ -72,7 +72,7 @@ module.exports = {
                 },
                 {
                   name: 'Perfumes',
-                  link: '/shampoo-y-jabon'
+                  link: '/salud-y-belleza'
                 },
                 {
                   name: 'Estética',
@@ -102,7 +102,7 @@ module.exports = {
               links: [
                 {
                   name: 'Antipulgas',
-                  link: '/antipulgas'
+                  link: '/antipulgas-para-perro'
                 },
                 {
                   name: 'Antibióticos',
@@ -122,8 +122,8 @@ module.exports = {
               name: 'Destacado',
               links: [
                 {
-                  name: 'Alimento Libre de Granos',
-                  link: '/alimento-libre-de-granos'
+                  name: 'Productos para la Higiene',
+                  link: '/men-for-san'
                 },
               ],
             },
@@ -243,10 +243,10 @@ module.exports = {
       options: {
         name: manifest.hasOwnProperty('name')
           ? manifest.name
-          : 'Gatsby Storefront',
+          : "Pet's Club Store",
         short_name: manifest.hasOwnProperty('short_name')
           ? manifest.short_name
-          : 'Gatsby Storefront',
+          : "Pet's Club Store",
         start_url: manifest.hasOwnProperty('start_url')
           ? manifest.start_url
           : '/',

@@ -7,7 +7,7 @@ import { StyledHeroSlider, StyledSliderItem } from './styles'
 
 const HeroSlider = ({collections}) => {
 	const settings = {
-		dots: false,
+		dots: true,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 1,

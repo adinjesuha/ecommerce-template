@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Brand, BrandsContainer, BrandSection } from './styles'
+import { Brand, BrandsContainer } from './styles'
 
 const Brands = () => {
   const data = useStaticQuery(graphql`
@@ -25,16 +25,14 @@ const Brands = () => {
     }
   `)
   return(
-    <BrandSection>
+    <BrandsContainer>
       <h3>Marcas populares</h3>
-      <BrandsContainer>
-        {data.allFile.edges.map((image, i) => (
-          <Brand key={i} to={image.node.name}>
-            <Img fluid={image.node.childImageSharp.fluid}/>
-          </Brand>
-        ))}
-      </BrandsContainer>
-    </BrandSection>
+      {data.allFile.edges.map((image, i) => (
+        <Brand key={i} to={image.node.name}>
+          <Img fluid={image.node.childImageSharp.fluid}/>
+        </Brand>
+      ))}
+    </BrandsContainer>
   )
 }
 

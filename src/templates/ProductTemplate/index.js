@@ -4,8 +4,8 @@ import { graphql, Link } from 'gatsby'
 import { navigate, useLocation } from '@reach/router'
 import queryString from 'query-string'
 import loadable from '@loadable/component';
-import CartContext from '../../context/CartContext'
 
+import CartContext from '../../context/CartContext'
 import SEO from '../../components/seo'
 import Layout from '../../components/layout'
 import ImageGallery from '../../components/ImageGallery'
@@ -47,8 +47,6 @@ export default function ProductTemplate({data, location }){
     'Twitter',
     'Whatsapp',
   ]
-
-  console.log(location)
 
   return(
     <Layout>

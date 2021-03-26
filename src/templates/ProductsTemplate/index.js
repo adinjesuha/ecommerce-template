@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/no-onchange */
-import React from 'react'
-import { graphql } from 'gatsby'
+import React, { useContext } from 'react'
 import Image from 'gatsby-image'
 
 import SEO from '../../components/seo'
@@ -9,26 +8,34 @@ import CatalogProducts from './CatalogProducts'
 import Pagination from '../../components/Pagination'
 import { LayoutWrapper } from '../../components/globals'
 import { HeaderBrand } from './styles'
+import ProductContext from '../../context/ProductContext'
 
-export default function ProductsTemplate({pageContext, data}){
+export default function ProductsTemplate({ pageContext }){
+  const { collections } = useContext(ProductContext)
   const { currentPage, numPages, handle, limit, skip } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? `/${handle}` : `/${handle}/${(currentPage - 1).toString()}`
   const nextPage = `/${handle}/${(currentPage + 1).toString()}`
+
+  const currentCollection = collections.filter(collection => collection.handle === handle)
   
   let products = [];
-  data.collection.nodes.forEach((node) => {
+  currentCollection.forEach((node) => {
     products = [...products, ...node.products];
   });
 
+  const { title, image } = currentCollection[0]
+
   return(
     <Layout>
-      <SEO title={data.collection.nodes[0].title} />
+      <SEO title={title} />
       <LayoutWrapper>
-        <HeaderBrand>
-          <Image fluid={data.collection.nodes[0].image?.localFile.childImageSharp.fluid}/>
-        </HeaderBrand>
+        {image && (
+          <HeaderBrand>
+            <Image fluid={image?.localFile.childImageSharp.fluid}/>
+          </HeaderBrand>
+        )}
         <CatalogProducts
           products={products}
           limit={limit}
@@ -50,33 +57,3 @@ export default function ProductsTemplate({pageContext, data}){
     </Layout>
   )
 }
-
-export const query = graphql`
-  query CatalogQuery($handle: String) {
-    collection: allShopifyCollection(filter: { handle: { eq: $handle } }) {
-      nodes {
-        products {
-          ...ShopifyProductFields
-          ...ProductTileFields
-        }
-        title
-        description
-        shopifyId
-        image {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1200, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-    }
-    store: site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;

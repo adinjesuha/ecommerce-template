@@ -1,16 +1,14 @@
 import React from 'react'
-import { CollectionTileWrapper, Title} from './styles'
-import { StyledLink } from '../StyledLink'
+import { CollectionTileWrapper } from './styles'
+import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
-const CollectionTile = ({destination, title, backgroundImage, featured}) => {
+const CollectionTile = ({destination, backgroundImage, featured}) => {
   return (
-    <CollectionTileWrapper 
-      fluid={backgroundImage}
-      featured={featured} 
-    >
-      <StyledLink to={destination}>
-        <Title>{title}</Title>
-      </StyledLink>
+    <CollectionTileWrapper featured={featured} >
+      <Link to={destination}>
+        <Img fluid={backgroundImage} />
+      </Link>
     </CollectionTileWrapper>
   )
 }

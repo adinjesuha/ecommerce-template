@@ -17,7 +17,7 @@ export const HeaderBrand = styled.div`
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     overflow: hidden;
-    margin: 1.5rem 0;
+    margin: 0 0 1.5rem 0;
   }
   @media ${device.laptop}{
     height: 250px;

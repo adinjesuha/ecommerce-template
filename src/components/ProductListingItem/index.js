@@ -10,7 +10,7 @@ import {
   ProductInfo 
 } from './styles'
 
-const ProductsListingItem = ({ product, handle }) => {
+const ProductsListingItem = ({ product, handle, isProductSlider }) => {
   const {
     images: [firstImage],
     variants,
@@ -29,7 +29,10 @@ const ProductsListingItem = ({ product, handle }) => {
               <Image 
                 fluid={firstImage.localFile.childImageSharp.fluid} 
                 alt={product.title}
-                style={{ margin: '1rem', maxHeight: 'calc(50vh - 4rem)' }}
+                style={{ 
+                  margin: '1rem', 
+                  maxHeight: 'calc(50vh - 1rem)'
+                }}
                 imgStyle={{ objectFit: 'contain' }}
               />
             </div>

@@ -6,6 +6,7 @@ import { RemainingCollection } from './styles'
 const HomePageCollectionsGrid = ({collections}) => {
   const saleCollection = collections.find(collection => collection.title === "Destacados")
   const remainingCollections = collections.filter(collection => collection.title !== "Destacados")
+  console.log('colecciones: ', collections)
   return (
     <div>
       {!!saleCollection && (
@@ -20,7 +21,7 @@ const HomePageCollectionsGrid = ({collections}) => {
       <RemainingCollection>
         {remainingCollections.map(collection => (
           <CollectionTile 
-            destination={`/all-products?c=${encodeURIComponent(collection.shopifyId)}`}
+            destination={collection.handle}
             key={collection.shopifyId}
             title={collection.title}
             description={collection.description}

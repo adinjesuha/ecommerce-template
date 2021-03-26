@@ -3,7 +3,7 @@ import Img from 'gatsby-image'
 import { MenuLinksWrapper, SubMenu, SubMenuItem } from './styles'
 import { StyledLink } from '../../StyledLink'
 
-const MenuLinks = ({menuLinks, grainFree}) => {
+const MenuLinks = ({menuLinks, menForSan}) => {
   return (
     <MenuLinksWrapper>
       {menuLinks.map((link) => (
@@ -41,7 +41,7 @@ const MenuLinks = ({menuLinks, grainFree}) => {
                       <>
                         <div>
                           <StyledLink to={link}>
-                            <Img fluid={grainFree.fluid}/>
+                            <Img fluid={menForSan.fluid}/>
                           </StyledLink>
                         </div>
                         <div>

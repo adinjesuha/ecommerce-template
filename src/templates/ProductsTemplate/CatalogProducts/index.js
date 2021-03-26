@@ -4,11 +4,10 @@ import { ProductListingWrapper } from '../../../components/ProductsListing/style
 import ProductsListingItem from '../../../components/ProductListingItem';
 
 
-const CatalogProducts = ({ products, limit, skip, cartUrl, handle }) => {
+const CatalogProducts = ({ products, limit, skip, handle }) => {
   return (
     <ProductListingWrapper>
       {products.map((product, index) => {
-        product.cartUrl = cartUrl;
         if (index + 1 > skip && index + 1 <= skip + limit) {
           return (
             <ProductsListingItem key={product.shopifyId} product={product} handle={handle}/>

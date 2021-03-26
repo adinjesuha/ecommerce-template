@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const BreadcrumbsWrapper = styled.div`
-  margin: 20px auto;
+  margin: 0 auto 20px;
   padding: 10px 0;
   > span {
     color: #666;

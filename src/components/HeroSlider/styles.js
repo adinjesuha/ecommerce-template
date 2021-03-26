@@ -36,8 +36,34 @@ export const StyledHeroSlider = styled(Slider)`
 		transform: rotate(180deg);
 	}
 	.slick-dots{
-		bottom: 10px;
-	}
+		bottom: -15px;
+    li{
+      width: 10px;
+      height: 10px;
+      margin: 0 8px;
+      button {
+        width: 10px;
+        height: 10px;
+        &:before{
+          color: transparent;
+          border-radius: 50%;
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin: 0 1px;
+          padding: 0;
+          overflow: visible;
+          background-color: #fff;
+          border: 1px solid var(--red-brand);
+        }
+      }
+      &.slick-active button:before{
+				opacity: 1;
+        background-color: var(--red-brand);
+        color: transparent;
+      }
+    }
+  }
 	.hero-image{
 		width: 100%;
 		&__figure{

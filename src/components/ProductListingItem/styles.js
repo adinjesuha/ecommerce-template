@@ -99,7 +99,7 @@ export const ProductInfo = styled.div`
     font-size: 1.2em;
     font-weight: 400;
     text-align: left;
-    color: #d0011b;
+    color: var(--red-brand);
     font-weight: 700;
   }
   .product-vendor{
