@@ -37,14 +37,14 @@ export const Grid = styled.section`
     > div:last-child{
       width: 50%;
       p:last-child {
-        margin-top: 30px !important;
+        margin-top: 10px !important;
       }
       .meta-description{
         display: block;
         h1{
           font-weight: bold;
           font-size: 1.4rem;
-          line-height: 1.2em;
+          line-height: 1.4em;
           margin-bottom: 0;
           display: block;
         }

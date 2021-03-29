@@ -36,7 +36,7 @@ module.exports = {
       menu: [
         {
           name: 'Perros',
-          link: null,
+          link: '/perros',
           subMenu: [
             {
               name: 'Alimento',
@@ -118,20 +118,11 @@ module.exports = {
                 },
               ],
             },
-            {
-              name: 'Destacado',
-              links: [
-                {
-                  name: 'Productos para la Higiene',
-                  link: '/men-for-san'
-                },
-              ],
-            },
           ]
         },  
         {
           name: 'Gatos',
-          link: null,
+          link: '/gatos',
           subMenu: [
             {
               name: 'Alimento',
@@ -181,15 +172,6 @@ module.exports = {
                 {
                   name: 'Platos y Bebederos',
                   link: '/platos-y-bebederos-para-gatos'
-                },
-              ],
-            },
-            {
-              name: 'Destacado',
-              links: [
-                {
-                  name: 'Royal Canin',
-                  link: '/royal-canin'
                 },
               ],
             },

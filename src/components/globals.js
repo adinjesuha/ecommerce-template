@@ -1,5 +1,6 @@
 import styled, { css, createGlobalStyle } from 'styled-components'
 import reset from "styled-reset"
+import { device } from '../utils/breakpoints'
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -47,7 +48,10 @@ export const LayoutWrapper = styled.div`
   margin: 0 auto;
   max-width: 1220px;
   box-sizing: border-box;
-  padding: 2.4rem 20px 2.4rem 20px;
+  padding: 0 20px 2.4rem 20px;
+  @media ${device.tablet}{
+    padding: 2.4rem 20px 2.4rem 20px;
+  }
 `
 
 export const Button = styled.button`

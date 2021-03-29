@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-onchange */
 import React, { useState, useEffect, useContext } from 'react'
 import { graphql, Link } from 'gatsby'
-import { navigate, useLocation } from '@reach/router'
+import { useLocation } from '@reach/router'
 import queryString from 'query-string'
 import loadable from '@loadable/component';
 
@@ -23,7 +23,7 @@ export default function ProductTemplate({data, location }){
   const [ product, setProduct ] = useState(null)
   const [ selectedVariant, setSelectedVariant ] = useState(null)
 
-  const { search, origin, pathname  } = useLocation()
+  const { search } = useLocation()
   const variantId = queryString.parse(search).variant
 
   useEffect(() => {
@@ -37,9 +37,6 @@ export default function ProductTemplate({data, location }){
   const handleVariantChange = e => {
     const newVariant = product?.variants.find( v => v.id === e.target.value)
     setSelectedVariant(newVariant)
-    navigate(`${origin}${pathname}?variant=${encodeURIComponent(newVariant.id)}`, {
-      replace: true
-    })
   }
 
   const shareButtons = [

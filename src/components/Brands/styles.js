@@ -32,7 +32,7 @@ export const Brand = styled(Link)`
     height: auto;
     margin: auto;
   }
-  @media ${device.laptop}{
+  @media ${device.tablet}{
     flex-basis: 33.33333%;
     max-width: 33.33333%;
     &:hover{

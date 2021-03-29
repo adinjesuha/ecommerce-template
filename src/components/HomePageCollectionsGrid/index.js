@@ -6,7 +6,6 @@ import { RemainingCollection } from './styles'
 const HomePageCollectionsGrid = ({collections}) => {
   const saleCollection = collections.find(collection => collection.title === "Destacados")
   const remainingCollections = collections.filter(collection => collection.title !== "Destacados")
-  console.log('colecciones: ', collections)
   return (
     <div>
       {!!saleCollection && (

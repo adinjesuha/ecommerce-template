@@ -7,7 +7,6 @@ import { SearchForm, SearchFormWrapper } from './styles'
 import { Button, Input } from '../globals'
 
 export default function Search(){
-  const [ hidesearchInput, setHideSearchInput ] = useState(true)
   const [ searchTerm, setSearchTerm ] = useState('')
   const { search } = useLocation()
   const c = queryString.parse(search)?.c || ''
@@ -20,14 +19,10 @@ export default function Search(){
       navigate(`/all-products?s=${encodeURIComponent(searchTerm)}`)
     }
   }
-  const handleSearchInput = e => {
-    e.preventDefault()
-    setHideSearchInput(!hidesearchInput)
-  }
 
   return(
-    <SearchFormWrapper hideSearchInput={hidesearchInput}>
-      <SearchForm onSubmit={handleSubmit} hideSearchInput={hidesearchInput}>
+    <SearchFormWrapper>
+      <SearchForm onSubmit={handleSubmit}>
         <Input  
           value={searchTerm} 
           onChange={(e) => setSearchTerm(e.currentTarget.value)} 
@@ -38,9 +33,6 @@ export default function Search(){
           <FaSearch />
         </Button>
       </SearchForm>
-      <Button onClick={handleSearchInput}>
-        <FaSearch />
-      </Button>
     </SearchFormWrapper>
   )
 }

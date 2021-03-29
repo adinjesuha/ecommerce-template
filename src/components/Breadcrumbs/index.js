@@ -9,13 +9,17 @@ const Breadcrumbs = ({
   collectionPath,
   separator,
 }) => {
+  const newStringCollectionPath = collectionPath?.replace(/-/gi, ' ')
+  const newCapitalizedCollectionPath = 
+    newStringCollectionPath?.charAt(0).toUpperCase() + 
+    newStringCollectionPath?.slice(1)
   return (
     <BreadcrumbsWrapper>
       <span><Link to="/">Inicio</Link></span>
       {collectionPath && collectionTitle ? (
         <span>
           <span>{separator}</span>
-          <Link to={`/${collectionPath}`}>{collectionTitle}</Link>
+          <Link to={`/${collectionPath}`}>{newCapitalizedCollectionPath}</Link>
         </span>
       ) : (
         ''

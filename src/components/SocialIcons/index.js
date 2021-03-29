@@ -20,20 +20,24 @@ const SocialIcon = ({ url, mail, phone }) => {
       >
         <FaInstagram />
       </IconWrapper>
-      <IconWrapper 
-        href={`mailto:${mail}`}
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        <FaEnvelope />
-      </IconWrapper>
-      <IconWrapper 
-        href={`tel:${phone}`}
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        <FaPhone />
-      </IconWrapper>
+      {mail && (
+        <IconWrapper 
+          href={`mailto:${mail}`}
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <FaEnvelope />
+        </IconWrapper>
+      )}
+      {phone && (
+        <IconWrapper 
+          href={`tel:${phone}`}
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <FaPhone />
+        </IconWrapper>
+      )}
     </SocialIconsWrapper>
   )
 };

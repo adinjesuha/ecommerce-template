@@ -4,7 +4,6 @@ import { device } from '../../utils/breakpoints'
 export const CollectionTileWrapper = styled.div`
   display: flex;
   position: relative;
-  margin-bottom: 40px;
   width: 100%;
   > a {
     width: 100%;

@@ -14,15 +14,17 @@ const HeaderBase = styled.header`
 
 export const HeaderWrapper = styled(HeaderBase)`
   border-bottom: 1px solid #eee;
-  visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
-  transition: all 200ms ${(props) => (props.show ? 'ease-in' : 'ease-out')};
-  transform: ${(props) => (props.show ? 'none' : 'translate(0, -100%)')};
+  z-index: 5000;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  right: 0px;
 `;
 
 export const Nav = styled.nav`
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 5px 10px;
   max-width: 1220px;
   display: flex;
   flex-wrap: wrap;
@@ -44,11 +46,6 @@ export const Nav = styled.nav`
   ${StyledLink}{
     color: var(--blue-brand);
     text-decoration: none;
-    > img {
-      vertical-align: middle;
-      width: 80px;
-      height: auto;
-    }
     &:hover{
       text-decoration: underline;
     }
@@ -60,11 +57,6 @@ export const Nav = styled.nav`
     }
     *:nth-child(4){
       order: initial;
-    }
-    ${StyledLink}{
-      > img {
-        width: 100px;
-      }
     }
   }
   @media ${device.laptop}{
