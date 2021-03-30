@@ -58,6 +58,7 @@ export const SearchForm = styled.form`
     }
   }
   @media ${device.tablet}{
+    display: block;
     > div {
       width: auto;
       > input {
