@@ -4,6 +4,7 @@ import { device } from '../../utils/breakpoints'
 export const HeaderBrand = styled.div`
   height: 70px;
   margin: 0 -20px;
+  margin-bottom: 20px;
   > .gatsby-image-wrapper {
     width: 100%;
     height: 100%;

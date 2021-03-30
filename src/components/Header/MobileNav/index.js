@@ -99,12 +99,12 @@ const MobileNav = ({ menuLinks, company, socialNetworks }) => {
               <MobileMenuItem key={index} menuLink={menuLink}/>
             ))}
           </ul>
-        </div>
-      </div>
-      <div className="mobileNavigation-footer">
-        <SocialIcons url={socialNetworks} />
-        <div>
-          <span>{`© ${year} ${company}`}</span>
+          <div className="mobileNavigation-footer">
+            <SocialIcons url={socialNetworks} />
+            <div>
+              <span>{`© ${year} ${company}`}</span>
+            </div>
+          </div>
         </div>
       </div>
     </MobileMenuWrapper>

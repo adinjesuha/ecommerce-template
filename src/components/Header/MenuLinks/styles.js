@@ -19,6 +19,11 @@ export const MenuLinksWrapper = styled.ul`
         height: 70px;
         padding: 0 10px;
         position: relative;
+
+        color: var(--blue-brand);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+
         &:after {
           content: '';
           display: none;
@@ -93,7 +98,7 @@ export const SubMenuItem = styled.div`
   }
   > div {
     font-size: 0.875rem;
-    color: var(--black);
+    color: var(--blue-brand);
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.5px;

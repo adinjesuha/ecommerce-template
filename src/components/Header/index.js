@@ -13,7 +13,6 @@ import MobileNav from './MobileNav'
 
 const Header = () => {
   const [ openMenu, setOpenMenu ] = useState(false)
-
   const data = useStaticQuery(graphql`
     query SiteMetaDataQuery {
       site {

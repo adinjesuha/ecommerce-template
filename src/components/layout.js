@@ -2,14 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import '../style.css'
-import HeaderBarNotice from "./HeaderBarNotice"
 import Header from "./Header"
 import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   return (
     <>
-      {/* <HeaderBarNotice /> */}
       <Header />
       <main>{children}</main>
       <Footer />

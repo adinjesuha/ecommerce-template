@@ -116,7 +116,6 @@ export const Input = styled.input`
   border: 1px solid #eee;
   display: block;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
   color: var(--black);
   letter-spacing: .5px;
   border-radius: 4px;

@@ -106,10 +106,23 @@ export const StyledHeroSlider = styled(Slider)`
 export const StyledSliderItem = styled.div`
 	width: 100%;
 	> a div{
-		height: 300px;
+		height: 70px;
 		width: 100%;
-		> img{
+		> .gatsby-image-wrapper {
 			width: 100%;
+			height: 100%;
+		}
+		@media ${device.mobileL}{
+			height: 100px;
+		}
+		@media ${device.tablet}{
+			height: 150px;
+		}
+		@media ${device.laptop}{
+			height: 250px;
+		}
+		@media ${device.desktop}{
+			height: 300px;
 		}
 	}
 `

@@ -42,6 +42,9 @@ export const SliderWrapper = styled(Slider)`
     &:hover{
       background-image: url(${require('../../images/arrow-right-white.svg')});
       background-color: #F04359;
+      background-position: 9px;
+      background-repeat: no-repeat;
+      background-size: 20px;
       outline: none;
     }
   }
@@ -59,6 +62,9 @@ export const SliderWrapper = styled(Slider)`
     &:hover{
       background-image: url(${require('../../images/arrow-right.svg')});
       background-color: transparent !important;
+      background-position: 9px;
+      background-repeat: no-repeat;
+      background-size: 20px;
     }
   }
 `

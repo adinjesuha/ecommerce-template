@@ -19,6 +19,9 @@ export const MobileMenuWrapper = styled.div`
     > div {
       flex: 1 1 0%;
       overflow-y: ${props => props.openMenu ? 'hidden' : 'auto'};
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
   .mobileNavigation-footer{

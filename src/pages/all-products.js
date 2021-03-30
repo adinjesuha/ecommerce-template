@@ -1,22 +1,12 @@
 import React, { useContext } from "react"
-import styled from 'styled-components'
 import { useLocation } from '@reach/router'
 import queryString from 'query-string'
 
 import ProductContext from '../context/ProductContext'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Filter from '../components/Filter'
 import ProductsListing from '../components/ProductsListing'
 import { LayoutWrapper } from "../components/globals"
-
-const Content = styled.div`
-  display: grid;
-  grid-gap: 20px;
-  margin-top: 20px;
-  grid-template-columns: 232px 3fr;
-`;
-
 
 const AllProductsPage = () => {
   const { products, collections } = useContext(ProductContext)
@@ -29,7 +19,7 @@ const AllProductsPage = () => {
 
   selectedCollectionIds.forEach(collectionId => {
     selectedCollectionIdsMap[collectionId] = true;
-  })
+  })  
 
   if(collections){
     collections.forEach(collection => {
@@ -40,17 +30,17 @@ const AllProductsPage = () => {
     })
   }
 
-  const filterByCategory = product => {
-    if(Object.keys(selectedCollectionIdsMap).length){
-      for( let key in selectedCollectionIdsMap){
-        if(collectionProductMap[key]?.[product.shopifyId]){
-          return true
-        }
-      }
-      return false
-    }
-    return true
-  }
+  // const filterByCategory = product => {
+  //   if(Object.keys(selectedCollectionIdsMap).length){
+  //     for( let key in selectedCollectionIdsMap){
+  //       if(collectionProductMap[key]?.[product.shopifyId]){
+  //         return true
+  //       }
+  //     }
+  //     return false
+  //   }
+  //   return true
+  // }
 
   const filterBySearchTerm = product => {
     if(searchTerm){
@@ -60,7 +50,6 @@ const AllProductsPage = () => {
   }
 
   const filteredProducts = products
-    .filter(filterByCategory)
     .filter(filterBySearchTerm)
 
   return (
@@ -75,31 +64,28 @@ const AllProductsPage = () => {
         {!!filteredProducts.length && (
           <h4>{filteredProducts.length} Products</h4>
         )}
-        <Content>
-          <Filter />
-          {!filteredProducts.length && (
+        {!filteredProducts.length && (
+          <div>
+            <h3>
+              <span>Oh no! Nada coincide con</span>
+              &nbsp;
+              <strong>'{searchTerm}'</strong>
+            </h3>
             <div>
-              <h3>
-                <span>Oh no! Nothing matches</span>
-                &nbsp;
-                <strong>'{searchTerm}'</strong>
-              </h3>
-              <div>
-                To help with your search why not try:
-                <br />
-                <br />
-                <ul>
-                  <li>Checking your spelling</li>
-                  <li>Using less words</li>
-                  <li>Try using a different search term</li>
-                </ul>
-              </div>
+              Para ayudarte con tu búsqueda, por qué no pruebas:
+              <br />
+              <br />
+              <ul>
+                <li>Revisando tu ortografía</li>
+                <li>Usando menos palabras</li>
+                <li>Intenta usar un término de búsqueda diferente</li>
+              </ul>
             </div>
-          )}
-          {!!filteredProducts.length && (
-            <ProductsListing products={filteredProducts} hasFilters/>
-          )}
-        </Content>
+          </div>
+        )}
+        {!!filteredProducts.length && (
+          <ProductsListing products={filteredProducts}/>
+        )}
       </LayoutWrapper>
     </Layout>
   )
