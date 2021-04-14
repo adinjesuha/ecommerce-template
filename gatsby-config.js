@@ -71,12 +71,12 @@ module.exports = {
                   link: '/shampoo-y-jabon'
                 },
                 {
-                  name: 'Perfumes',
+                  name: 'Salud y Belleza',
                   link: '/salud-y-belleza'
                 },
                 {
-                  name: 'Estética',
-                  link: '/estetica'
+                  name: 'Productos para el Hogar',
+                  link: '/hogar'
                 },
               ],
             },
@@ -115,6 +115,10 @@ module.exports = {
                 {
                   name: 'Suplementos',
                   link: '/suplementos'
+                },
+                {
+                  name: 'Tranquilizantes',
+                  link: '/tranquilizantes'
                 },
               ],
             },
@@ -159,6 +163,10 @@ module.exports = {
                 {
                   name: 'Grooming y Estética',
                   link: '/estetica-para-gatos'
+                },
+                {
+                  name: 'Productos para el Hogar',
+                  link: '/hogar'
                 },
               ]
             },

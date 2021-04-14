@@ -23,7 +23,7 @@ export const StyledHeroSlider = styled(Slider)`
 		&::before{
 			content: "";
 		}
-		&:hover{
+		&:hover, &:focus{
 			opacity: 1;
 			outline: none;
 			background-image: url(${require('../../images/arrow-right-white.svg')});
@@ -76,6 +76,11 @@ export const StyledHeroSlider = styled(Slider)`
 			max-width: 100%;
 		}
 	}
+	@media ${device.mobileL}{
+		.slick-slide{
+			max-width: auto;
+		}
+	}
 	@media ${device.tablet}{
 		.slick-prev, .slick-next  {
 			display: block !important;
@@ -105,24 +110,28 @@ export const StyledHeroSlider = styled(Slider)`
 
 export const StyledSliderItem = styled.div`
 	width: 100%;
+	height: 87px;
 	> a div{
-		height: 70px;
+		height: 100px;
 		width: 100%;
 		> .gatsby-image-wrapper {
 			width: 100%;
 			height: 100%;
 		}
+		@media ${device.mobileM}{
+			height: 102px;
+		}
 		@media ${device.mobileL}{
-			height: 100px;
+			height: 115px;
 		}
 		@media ${device.tablet}{
-			height: 150px;
+			height: 210px;
 		}
 		@media ${device.laptop}{
-			height: 250px;
+			height: 278px;
 		}
 		@media ${device.desktop}{
-			height: 300px;
+			height: 390px;
 		}
 	}
 `

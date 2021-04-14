@@ -5,8 +5,6 @@ import ProductsSliderItem from './ProductsSliderItem'
 
 const ProductsSlider = ({name, collection}) => {
   const settings = {
-    dots: false,
-    infinite: false,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 5,
@@ -17,8 +15,6 @@ const ProductsSlider = ({name, collection}) => {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
-          infinite: false,
-          dots: false
         }
       },
       {
@@ -26,8 +22,6 @@ const ProductsSlider = ({name, collection}) => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: false,
-          dots: false
         }
       },
       {
@@ -35,8 +29,6 @@ const ProductsSlider = ({name, collection}) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          infinite: false,
-          dots: false
         }
       },
       {

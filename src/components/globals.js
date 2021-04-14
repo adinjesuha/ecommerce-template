@@ -25,22 +25,42 @@ export const GlobalStyle = createGlobalStyle`
     margin: 20px 0;
   }
   h1{
-    font-size: 3em;
-  }
-  h2{
     font-size: 2.5em;
   }
-  h3{
+  h2{
     font-size: 2em;
   }
-  h4{
+  h3{
     font-size: 1.5em;
   }
-  h5{
+  h4{
     font-size: 1em;
   }
+  h5{
+    font-size: .75em;
+  }
   h6{
-    font-size: 0.75em;
+    font-size: 0.5em;
+  }
+  @media ${device.tablet}{
+    h1{
+      font-size: 3em;
+    }
+    h2{
+      font-size: 2.5em;
+    }
+    h3{
+      font-size: 2em;
+    }
+    h4{
+      font-size: 1.5em;
+    }
+    h5{
+      font-size: 1em;
+    }
+    h6{
+      font-size: 0.75em;
+    }
   }
 `
 

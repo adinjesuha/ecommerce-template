@@ -23,18 +23,26 @@ const IndexPage = () => {
       <HeroSlider collections={promos} />
       <LayoutWrapper>
         <SectionWrapper>
+          <ProductsSlider 
+            name="Favoritos de nuestros clientes"
+            collection={
+              collections.filter(collection => collection.title === "Favoritos")
+            }
+          />
+        </SectionWrapper>
+        <SectionWrapper>
           <Brands />
         </SectionWrapper>
         <SectionWrapper>
           <ProductsSlider 
-            name="Destacados"
+            name="Productos destacados"
             collection={
               collections.filter(collection => collection.title === "Destacados")
             }
           />
         </SectionWrapper>
         <SectionWrapper>
-          <HomePageCollectionsGrid 
+          <HomePageCollectionsGrid
             collections={
               collections.filter(collection => 
                 collection.title === "Gatos" || 

@@ -1,11 +1,23 @@
 import styled from 'styled-components'
 import Slider from 'react-slick'
+import { device } from '../../utils/breakpoints'
 
 export const ProductsSliderWrapper = styled.div`
   > h3 {
     font-weight: 300;
-    line-height: 44px;
+    line-height: 1.2;
     margin-top: 0;
+    width: 200px;
+  }
+  @media ${device.mobileL}{
+    > h3{
+     width: 250px;
+    }
+  }
+  @media ${device.tablet}{
+    > h3 {
+      width: 100%;
+    }
   }
 `
 
@@ -19,16 +31,16 @@ export const SliderWrapper = styled(Slider)`
   }
   .slick-prev, .slick-next  {
     background-image: url(${require('../../images/arrow-right-brand.svg')});
-    background-position: 9px;
+    background-position: 8px;
+    background-size: 18px;
     background-repeat: no-repeat;
-    background-size: 20px;
     background-color: transparent;
     border-radius: 50%;
     border: 2px solid #F04359;
     margin-right: 4px;
     margin-left: 4px;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     outline: 0;
     transition: background-color .3s ease;
     /* positioning */
@@ -49,7 +61,7 @@ export const SliderWrapper = styled(Slider)`
     }
   }
   .slick-prev{
-    transform: rotate(180deg) translate(50px, 62px);
+    transform: rotate(180deg) translate(42px, 62px);
   }
   .slick-dots{
     display: none;
@@ -65,6 +77,17 @@ export const SliderWrapper = styled(Slider)`
       background-position: 9px;
       background-repeat: no-repeat;
       background-size: 20px;
+    }
+  }
+  @media ${device.mobileL}{
+    .slick-prev, .slick-next  {
+      background-position: 9px;
+      background-size: 20px;
+      width: 40px;
+      height: 40px;
+    }
+    .slick-prev{
+      transform: rotate(180deg) translate(50px, 62px);
     }
   }
 `
