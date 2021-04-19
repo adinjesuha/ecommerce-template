@@ -41,16 +41,6 @@ const IndexPage = () => {
             }
           />
         </SectionWrapper>
-        <SectionWrapper>
-          <HomePageCollectionsGrid
-            collections={
-              collections.filter(collection => 
-                collection.title === "Gatos" || 
-                collection.title === "Perros" 
-              )
-            }
-          />
-        </SectionWrapper>
       </LayoutWrapper>
     </Layout>
   )
