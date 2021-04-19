@@ -85,15 +85,19 @@ module.exports = {
               links: [
                 {
                   name: 'Juguetes',
-                  link: '/juguetes-para-perros'
+                  link: '/juguetes-para-perro'
                 },
                 {
                   name: 'Camas y Tapetes',
-                  link: '/camas-y-tapetes-para-perros'
+                  link: '/camas-y-tapetes-para-perro'
                 },
                 {
                   name: 'Platos y Bebederos',
-                  link: '/platos-y-bebederos-para-perros'
+                  link: '/platos-y-bebederos-para-perro'
+                },
+                {
+                  name: 'Otros',
+                  link: '/otros-para-perro'
                 },
               ],
             },
@@ -157,12 +161,8 @@ module.exports = {
                   link: '/arena-y-areneros'
                 },
                 {
-                  name: 'Limpiza',
-                  link: '/limpieza-para-hogar-gatos'
-                },
-                {
                   name: 'Grooming y Estética',
-                  link: '/estetica-para-gatos'
+                  link: '/grooming-y-estetica'
                 },
                 {
                   name: 'Productos para el Hogar',
@@ -180,6 +180,19 @@ module.exports = {
                 {
                   name: 'Platos y Bebederos',
                   link: '/platos-y-bebederos-para-gatos'
+                },
+              ],
+            },
+            {
+              name: 'Farmacia',
+              links: [
+                {
+                  name: 'Antipulgas',
+                  link: '/antipulgas-para-gato'
+                },
+                {
+                  name: 'Antibióticos',
+                  link: '/antibioticos-para-gato'
                 },
               ],
             },
