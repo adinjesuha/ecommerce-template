@@ -18,7 +18,7 @@ module.exports = {
       company: `Pet's Club Honduras`,
       about: `Somos la tienda para mascotas online 100% hondureña. Compra alimento para mascotas, juguetes, anti pulgas y más.`,
       location: 'Tegucigalpa, Honduras',
-      phone: '+504 9676-1154',
+      phone: '+504 9676-1158',
       socialNetworks: [
         'https://facebook.com/petsclubHonduras',
         'https://instagram.com/petsclub_store',
