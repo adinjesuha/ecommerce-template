@@ -242,6 +242,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://petsclubhn.us7.list-manage.com/subscribe/post?u=98c78d79ce4c84b003c0eafff&amp;id=59edfb6298', 
+        timeout: 3500, 
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: manifest.hasOwnProperty('name')
